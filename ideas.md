@@ -1,4 +1,4 @@
-##*PROJECT 1: One page website*
+##PROJECT 1: One page website
 - Build a one-page responsive website with HTML & advanced CSS layout to showcase your own work or another topic of your choosing.
 - First part is based on an emulation of a magazine or print-based example, then adapt and rework it into something I’d like to make.
 
