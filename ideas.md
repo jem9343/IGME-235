@@ -6,10 +6,10 @@ IDEAS:
 - How about showing art too? :D
 
 Portfolio inspirations:
-https://people.rit.edu/dls7470/235/portfolio/
-Like the buttons - https://people.rit.edu/ald1289/portfolio/index.html
-https://people.rit.edu/kle4382/portfolio/
-https://people.rit.edu/mjc9536/235/project1/
+- https://people.rit.edu/dls7470/235/portfolio/
+- I Like the buttons - https://people.rit.edu/ald1289/portfolio/index.html
+- https://people.rit.edu/kle4382/portfolio/
+- https://people.rit.edu/mjc9536/235/project1/
 
 
 ##*PROJECT 2: Web Service Application*
