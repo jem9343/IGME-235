@@ -12,7 +12,7 @@ Portfolio inspirations:
 - https://people.rit.edu/mjc9536/235/project1/
 
 
-##*PROJECT 2: Web Service Application*
+## PROJECT 2: Web Service Application
 - Use JavaScript with a Web API to build something interesting with data from another web service.
 - Proposal will be provided first
 - Prototype followed by critiques
@@ -21,7 +21,7 @@ Portfolio inspirations:
 
 IDEAS:
 
-##*PROJECT 3: JavaScript Game or Experience*
+## PROJECT 3: JavaScript Game or Experience
 - Build a game or interactive experience with JavaScript.
 - Proposal
 - Checkpoint/check in
