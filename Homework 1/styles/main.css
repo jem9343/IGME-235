@@ -1,0 +1,33 @@
+h1
+{ 
+    color: rgb(0, 0, 0); 
+    font-family: sans-serif; 
+}
+
+blockquote 
+{ 
+    /*background-color: rgb(226, 210, 188); */
+    padding: 1rem; 
+    border: 0.25rem; 
+    border-style: solid; 
+    border-color:rgb(179, 95, 95);
+}
+
+h2 
+{
+    background-color: rgb(226, 210, 188); 
+    border-left:6px solid rgb(179, 95, 95);
+    padding: 0.5rem; 
+}
+
+img 
+{
+    width : 50%
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /*width: 50%; */
+}
