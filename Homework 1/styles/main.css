@@ -10,13 +10,17 @@ blockquote
     padding: 1rem; 
     border: 0.25rem; 
     border-style: solid; 
-    border-color:rgb(179, 95, 95);
+    border-color:rgb(146, 27, 27);
+       /* float: left;*/
+        width: 40%;
+       /* padding: 2%;*/
+margin-left: 50%;
 }
 
 h2 
 {
     background-color: rgb(226, 210, 188); 
-    border-left:6px solid rgb(179, 95, 95);
+    border-left:6px solid rgb(146, 27, 27);
     padding: 0.5rem; 
 }
 
@@ -30,6 +34,7 @@ h2
 .imgRegular
 {
     width: 30vw;
+    margin: 0.5vw;
 }
 
 .center {
@@ -38,3 +43,9 @@ h2
     margin-right: auto;
     /*width: 50%; */
 }
+
+.float {
+    float: left; 
+    margin: 1vw;
+    width: 45vw;
+ }
