@@ -1,0 +1,79 @@
+h1
+{ 
+    color: rgb(0, 0, 0); 
+    font-family: sans-serif; 
+}
+
+/*LVFHA- Must be link, visited, focus, hover, and active in that order*/
+a:link{color:rgb(206, 202, 146)}
+a:visited{color:rgb(184, 39, 39)}
+a:hover,a:focus{background-color: rgb(146, 27, 27); color: white}
+a:active{color:#00ff49; background-color:rgb(255, 255, 255); }
+
+blockquote 
+{ 
+    /*background-color: rgb(226, 210, 188); */
+    border: 0.25rem; 
+    border-style: solid; 
+    border-color:rgb(146, 27, 27);
+        width: 45%;
+    padding: 2%;
+    margin-left: 50%;
+    margin-top: 1vw;
+    max-width: 1000px;
+    font-size: 14pt;
+}
+
+h2 
+{
+    background-color: rgb(226, 210, 188); 
+    border-left:6px solid rgb(146, 27, 27);
+    padding: 0.5rem; 
+}
+
+.header
+{
+    display: block;
+    margin: 0 auto;
+    width: 500;
+}
+
+.imgRegular
+{   
+    width: 25vw; 
+}
+
+.center
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /*width: 50%; */
+}
+
+.floatImg 
+{
+    float: left;
+    margin: 1em 0.5em 1em 0.25em;
+    width: 30vw;
+    max-width: 40vw;
+    margin-left: 5%;
+}
+
+ p
+ {
+    font-size: 16pt;
+ }
+
+ ul
+ {
+    font-size: 16pt;
+ }
+
+ body
+ {
+    margin: auto;
+    width: 80%;
+    background-color: #ffffff;
+ }
+ 
