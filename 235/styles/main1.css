@@ -27,7 +27,7 @@ img {
     width: 10vw;
     float: left;
     padding: 1em;
-    size: 1vw;
+    size: 1.5vw;
 }
 
 p {
@@ -39,7 +39,7 @@ p {
 
 body {
     margin: auto;
-    width: 75%;
+    width: 80%;
     font-size: 14pt;
     background-color: rgb(47, 49, 74);
 }
@@ -55,10 +55,6 @@ h2 {
 b {
     color: rgb(0, 0, 0);
     font-size: larger;
-}
-
-ul {
-    list-style: none;
 }
 
 h3 {
@@ -95,13 +91,14 @@ a:active {
 }
 
 
-li a {
-    width: 100px;
+a {
+    width: 10px;
     border: 0.2em solid black;
     padding: 1em;
-    margin: 1em;
+    margin: 5em;
     flex: 1 0 100px;
-    align-self: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -112,13 +109,11 @@ li a {
 #container {
     background-color: #959595;
     display: flex;
-    width: 300px;
+    width: 60vw;
     margin-left: auto;
     margin-right: auto;
     flex-flow: row wrap;
-    justify-items: center;
-}
-
-.link {
-    display: block;
+    height: 15vh;
+    align-items: center;
+    justify-content: space-around;
 }
