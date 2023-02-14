@@ -1,0 +1,116 @@
+h1 {
+    color: rgb(47, 49, 74);
+    font-family: sans-serif;
+    border-bottom: 3px solid rgb(167, 188, 226);
+    display: block;
+    padding: 0.5em 2em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 40vw;
+}
+
+blockquote {
+    background-color: rgb(125, 159, 216);
+    padding: 1rem;
+    color: rgb(0, 0, 0);
+}
+
+.center {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    /*width: 50%; */
+}
+
+img {
+    width: 10vw;
+    float: left;
+    padding: 1em;
+    size: 1vw;
+}
+
+p {
+    display: block;
+    line-height: 2em;
+    padding: 1em;
+    overflow: auto;
+}
+
+body {
+    margin: auto;
+    width: 75%;
+    font-size: 14pt;
+    background-color: rgb(47, 49, 74);
+}
+
+h2 {
+    display: block;
+    background-color: rgb(167, 188, 226);
+    border-left: 6px solid rgb(255, 255, 255);
+    padding: 0.5rem;
+
+}
+
+b {
+    color: rgb(0, 0, 0);
+    font-size: larger;
+}
+
+ul {
+    list-style: none;
+}
+
+h3 {
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 3px solid rgb(0, 0, 0);
+    padding: 0.5rem;
+    width: 20vw;
+    text-align: center;
+}
+
+/* LINKS */
+
+a:link {
+    color: rgb(167, 188, 226);
+    background-color: rgb(23, 23, 23);
+}
+
+a:visited {
+    color: rgb(233, 164, 90)
+}
+
+a:hover,
+a:focus {
+    background-color: rgb(233, 164, 90);
+    color: white
+}
+
+a:active {
+    color:rgb(233, 164, 90);
+    background-color: rgb(255, 255, 255);
+}
+
+
+li a {
+    width: 100px;
+    display: block;
+    float:left;
+    border: 0.2em solid black;
+    padding: 1em;
+    margin: 1em;
+}
+
+
+#outerdiv {
+    background-color: #ffffff;
+}
+
+#container {
+    background-color: #959595;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45vw;
+    height: 25vh;
+}
