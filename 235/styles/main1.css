@@ -118,3 +118,7 @@ li a {
     flex-flow: row wrap;
     justify-items: center;
 }
+
+.link {
+    display: block;
+}
