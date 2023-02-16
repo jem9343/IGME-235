@@ -32,12 +32,43 @@ article {
     padding: .5rem;
 }
 
-nav, aside {
+nav,
+aside {
     background-color: #b5e7a0;
-    border: 1px dotted black; 
+    border: 1px dotted black;
 }
 
 /*****************
 Grid Formatting  
 *****************/
 
+#wrapper {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 1fr 2fr 10fr 2fr 1fr;
+    grid-template-areas:
+    "header     header      header" 
+    "navbar     content     sidebar" 
+    "footer     footer      footer";
+}
+
+
+header {
+    grid-area: header;
+}
+
+article {
+    grid-area: content;
+}
+
+nav {
+    grid-area: navbar;
+}
+
+aside {
+    grid-area: sidebar;
+}
+
+footer {
+    grid-area: footer;
+}
