@@ -35,3 +35,15 @@ ul.menu {
 footer {
     grid-area: footer;
 }
+
+
+@media screen and (min-width:850px)
+{
+    .wrapper{
+        grid-template-areas:
+    "logo       intro"
+    "menu       menu"
+    "playground playground"
+    "footer     footer";
+    }
+}
