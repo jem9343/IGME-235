@@ -1,0 +1,17 @@
+/* It starts completely empty. I wish you luck. */
+
+body {
+    margin: 1rem;
+    border: 1em solid black;
+}
+
+.wrapper
+{
+    display: grid;
+    grid-template-areas:
+    "logo" 
+    "menu" 
+    "intro" 
+    "playground" 
+    "footer";
+}
