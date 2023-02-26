@@ -2,16 +2,36 @@
 
 body {
     margin: 1rem;
-    border: 1em solid black;
 }
 
-.wrapper
-{
+.wrapper {
     display: grid;
     grid-template-areas:
-    "logo" 
-    "menu" 
-    "intro" 
-    "playground" 
-    "footer";
+        "logo"
+        "menu"
+        "intro"
+        "playground"
+        "footer";
+    grid-template-rows: 50px 1fr 30px;
+    grid-template-columns: 150px 1fr;
+}
+
+h1.game {
+    grid-area: logo;
+}
+
+ul.menu {
+    grid-area: menu;
+}
+
+#introduction {
+    grid-area: intro;
+}
+
+#tetgrid {
+    grid-area: playground;
+}
+
+footer {
+    grid-area: footer;
 }
