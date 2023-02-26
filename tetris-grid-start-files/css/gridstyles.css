@@ -105,6 +105,7 @@ ul.menu ul {
 
 ul.menu li:hover ul {
     display: flex;
+    list-style: none;
 }
 
 .menu .submenu li>a {
@@ -145,36 +146,36 @@ ul.menu li:hover ul {
     grid-column: 2/span 2;
     grid-row: 2/span 3;
 }
+
 img {
     transition-property: transform;
     transition-duration: 2s;
 }
 
- img:hover {
+img:hover {
     transform: rotate(-90deg);
 }
 
-#s
-{
- 
+#s {
+
     grid-column: 3/4;
     grid-row: 3/4;
 }
 
-#t
-{
+#t {
     grid-column: 4/5;
 }
-#t img{
+
+#t img {
     transform-origin: 0 0;
     transform: translate(305px, 105px) rotate(-180deg);
 }
 
-#l
-{
+#l {
     grid-column: 1/3;
 
 }
+
 #l img {
     transform-origin: 0 0;
     transform: translate(0, 105px) rotate(-90deg);
