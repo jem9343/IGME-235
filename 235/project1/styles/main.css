@@ -1,0 +1,25 @@
+#quote {
+    font-size: 28px;
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    grid-row: 1 ;
+    grid-column: 1 / 4;
+    
+}
+
+#bolded {
+    font-family: 'Franklin Gothic', sans-serif;
+    font-style: bold;
+    font-size: x-large;
+    
+}
+
+#wrapper {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "header  header"
+    "1  2"
+    "3  4"
+    "5  6";
+}
