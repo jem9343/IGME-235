@@ -49,9 +49,17 @@ Grid Formatting
     height: 100vh;
     grid-template-rows: 1fr 2fr 10fr 2fr 1fr;
     grid-template-areas:
+<<<<<<< HEAD
         "header     header      header"
         "navbar     content     sidebar"
         "footer     footer      footer";
+=======
+        "header"
+        "navbar"
+        "content"
+        "sidebar"
+        "footer";
+>>>>>>> b12bf4a9f6ab2dd219b7b39913576c2ed6f89424
     max-width: 1200px;
 
 }
