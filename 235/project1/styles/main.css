@@ -1,31 +1,91 @@
 #quote {
     font-size: 28px;
     font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-    grid-row: 1 ;
+    grid-row: 1;
     grid-column: 1 / 4;
-    
 }
 
 #bolded {
-    font-family: 'Franklin Gothic', sans-serif;
+    font-family:sans-serif;
     font-style: bold;
-    font-size: x-large;
+    font-size: 30px;
     grid-row: 2;
     grid-column: 1;
 }
 
 #wrapper {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-    "header  header"
-    "1  2"
-    "3  4"
-    "5  6";
+    justify-items: center;
+    margin-left: auto;
+    width: 80%;
+    margin-right: auto;
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    grid: 200px repeat(8, 100px) / 1fr 1fr;
+    grid-gap: 0px 50px;
+    align-content: center;
+    justify-content: center;
+    padding: 0 2%;
 }
 
-#easy
-{
-    grid-row:3;
+#save {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+#mini-wrapper {
+    border: 1px solid white;
+    grid-row: 4;
+    grid-column: 1;
+}
+
+#easy {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+#dual {
+    grid-row: 4;
+    grid-column: 2;
+}
+
+#better {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+#room {
+    grid-row: 5;
+    grid-column: 2;
+}
+
+#industry-standard {
+    grid-row: 6;
+    grid-column: 2;
+}
+
+#high {
+    grid-row: 7;
+    grid-column: 2;
+}
+
+#more {
+    grid-row: 8;
+    grid-column: 2;
+}
+
+body {
+    background-color: rgb(13, 14, 15);
+}
+
+#computerDollarQuote {
+    grid-row: 9;
+    grid-column: 2;
+}
+
+p {
+    margin: auto;
+    font-family: sans-serif;
+    text-align: justify;
+    font-size: 14px;
 }
