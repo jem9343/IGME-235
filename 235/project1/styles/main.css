@@ -10,7 +10,8 @@
     font-family: 'Franklin Gothic', sans-serif;
     font-style: bold;
     font-size: x-large;
-    
+    grid-row: 1;
+    grid-column: 3;
 }
 
 #wrapper {
