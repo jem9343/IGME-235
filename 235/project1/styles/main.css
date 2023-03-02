@@ -10,8 +10,8 @@
     font-family: 'Franklin Gothic', sans-serif;
     font-style: bold;
     font-size: x-large;
-    grid-row: 1;
-    grid-column: 3;
+    grid-row: 2;
+    grid-column: 1;
 }
 
 #wrapper {
@@ -23,4 +23,9 @@
     "1  2"
     "3  4"
     "5  6";
+}
+
+#easy
+{
+    grid-row:3;
 }
