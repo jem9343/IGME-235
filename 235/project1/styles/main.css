@@ -6,7 +6,7 @@
 }
 
 #bolded {
-    font-family:sans-serif;
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
     font-style: bold;
     font-size: 30px;
     grid-row: 2;
@@ -23,13 +23,14 @@
     color: white;
     grid: 200px repeat(8, 100px) / 1fr 1fr;
     grid-gap: 0px 50px;
-    align-content: center;
-    justify-content: center;
+    align-items: center;
+    justify-items: center;
     padding: 0 2%;
+    height: 1000px;
 }
 
 #save {
-    grid-row: 3;
+    grid-row: 4;
     grid-column: 1;
 }
 
@@ -88,4 +89,167 @@ p {
     font-family: sans-serif;
     text-align: justify;
     font-size: 14px;
+}
+
+@media screen and (max-width: 700px) {
+    #quote {
+        font-size: 14pt;
+    }
+
+    p{
+        font-size: 12pt;
+    }
+
+    #wrapper
+    {
+        grid-gap: 0 0;
+        grid: 200px repeat(16, 110px) / 1fr;
+        align-items: center;
+        justify-items: center;
+        height: 2000px;
+    }
+
+    #bolded
+    {
+        font-size: 14pt;
+        grid-row:2;
+    }
+
+    #save {
+        grid-row: 3;
+        grid-column: 1;
+    }
+    
+    #mini-wrapper {
+        border: 1px solid white;
+        grid-row: 4;
+        grid-column: 1;
+    }
+    
+    #easy {
+        grid-row: 4;
+        grid-column: 1;
+    }
+    
+    #dual {
+        grid-row: 5;
+        grid-column: 1;
+    }
+    
+    #better {
+        grid-row: 6;
+        grid-column: 1;
+    }
+    
+    #room {
+        grid-row: 7;
+        grid-column: 1;
+    }
+    
+    #industry-standard {
+        grid-row: 8;
+        grid-column: 1;
+    }
+    
+    #high {
+        grid-row: 9 / 10;
+        grid-column: 1;
+    }
+    
+    #more {
+        grid-row: 10;
+        grid-column: 1;
+    }
+    
+    #computerDollarQuote {
+        grid-row: 11;
+        grid-column: 1;
+    }
+
+    body{
+        padding: 0 0.5em;
+    }
+
+}
+
+@media screen and (min-width: 700px) and (max-width: 800px)
+{
+    #quote {
+        font-size: 16pt;
+    }
+
+    p{
+        font-size: 12pt;
+    }
+
+    #wrapper
+    {
+        grid-gap: 0 0;
+        grid: 200px repeat(16, 110px) / 1fr;
+        align-items: center;
+        height: 1500px;
+        justify-items: center;
+    }
+
+    #bolded
+    {
+        font-size: 14pt;
+        grid-row:2;
+    }
+
+    #save {
+        grid-row: 3;
+        grid-column: 1;
+    }
+    
+    #mini-wrapper {
+        border: 1px solid white;
+        grid-row: 4;
+        grid-column: 1;
+    }
+    
+    #easy {
+        grid-row: 4;
+        grid-column: 1;
+    }
+    
+    #dual {
+        grid-row: 5;
+        grid-column: 1;
+    }
+    
+    #better {
+        grid-row: 6;
+        grid-column: 1;
+    }
+    
+    #room {
+        grid-row: 7;
+        grid-column: 1;
+    }
+    
+    #industry-standard {
+        grid-row: 8;
+        grid-column: 1;
+    }
+    
+    #high {
+        grid-row: 9 / 10;
+        grid-column: 1;
+    }
+    
+    #more {
+        grid-row: 10;
+        grid-column: 1;
+    }
+    
+    body {
+        background-color: rgb(13, 14, 15);
+    }
+    
+    #computerDollarQuote {
+        grid-row: 11;
+        grid-column: 1;
+    }
+
 }
