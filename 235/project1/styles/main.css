@@ -98,6 +98,12 @@ p {
     padding-left: 1em;
 }
 
+#pic{
+    position: static;
+    bottom: 0;
+  right: 0;
+}
+
 @media screen and (max-width: 700px) {
     #quote {
         font-size: 14pt;
