@@ -1,111 +1,107 @@
 #quote {
-    font-size: 28px;
+    font-size: 23pt;
     font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
     grid-row: 1;
     grid-column: 1 / 4;
+    padding: 0 0em;
+    text-align: center;
 }
 
-#bolded {
+#save {
     font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-    font-size: 30px;
+    font-size: 16pt;
     grid-row: 2;
     grid-column: 1;
+    width:425px;
+    text-align: left;
 }
 
 #wrapper {
     display: grid;
     justify-items: center;
     margin-left: auto;
-    width: 80%;
+    width: 70%;
     margin-right: auto;
     border: 1px solid rgb(255, 255, 255);
     color: white;
-    grid: 200px repeat(8, 100px) / 1fr 1fr;
-    grid-gap: 0px 50px;
+    grid: 175px repeat(5, 110px) / 1fr 1fr;
     align-items: center;
     justify-items: center;
+    grid-gap:0em 0;
     padding: 0 2%;
     height: 1000px;
+    text-align: justify;
 }
 
-#save {
-    grid-row: 4;
-    grid-column: 1;
-}
-
-#mini-wrapper {
-    border: 1px solid white;
-    grid-row: 6/9;
-    grid-column: 1;
-    display: grid;
-    grid: 100px 1fr / 150px 150px;
-}
-
-#specifications {
-    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-    grid-column: span;
-    grid-row: 1;
-}
-
-#left {
-    grid-column: 1;
-    text-align: left;
-}
-
-#easy {
-    grid-row: 2;
+#right-big {
     grid-column: 2;
-}
-
-#dual {
     grid-row: 4;
-    grid-column: 2;
 }
 
-#better {
+#left-big{
+    grid-column: 1;
     grid-row: 3;
-    grid-column: 2;
-}
-
-#room {
-    grid-row: 5;
-    grid-column: 2;
-}
-
-#industry-standard {
-    grid-row: 6;
-    grid-column: 2;
-}
-
-#high {
-    grid-row: 7;
-    grid-column: 2;
-}
-
-#more {
-    grid-row: 8;
-    grid-column: 2;
+    width: 425px;
 }
 
 body {
     background-color: rgb(13, 14, 15);
+    font-family: sans-serif;
 }
 
 #computerDollarQuote {
-    grid-row: 9;
+    grid-row: 7;
     grid-column: 2;
 }
 
 p {
     margin: auto;
-    font-family: sans-serif;
-    text-align: justify;
-    font-size: 14px;
+    font-size: 11pt;
+    width:425px;
+    align-self: baseline;
+}
+
+#mini-wrapper {
+    border: 1px solid white;
+    grid-row: 6;
+    grid-column: 1;
+    display: grid;
+    grid: 60px 100px 100px 100px 100px 75px/ 200px 200px;
+    font-size: 12pt;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 10px;
+    font-size:11pt;
+}
+
+#specifications {
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    grid-column: 1 / 4;
+    grid-row: 1;
+    font-size:14pt;
+    text-align: center;
+}
+
+
+#left {
+    grid-column: 1;
+    grid-row: 2/6;
+    text-align: left;
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 2em;
+}
+
+#right{
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    grid-column: 2;
+    grid-row: 2/6;
+    padding-left: 1em;
 }
 
 @media screen and (max-width: 700px) {
     #quote {
         font-size: 14pt;
+        text-align: left;
     }
 
     p {
@@ -128,12 +124,17 @@ p {
     #save {
         grid-row: 3;
         grid-column: 1;
+        display:flex;
+  align-items:center;
+        
     }
 
     #mini-wrapper {
         border: 1px solid white;
         grid-row: 4;
         grid-column: 1;
+        align-items: center;
+        justify-items: center;
     }
 
     #easy {
@@ -278,6 +279,10 @@ p {
     #computerDollarQuote {
         grid-row: 11;
         grid-column: 1;
+    }
+    #left {
+        grid-column: 1;
+        text-align: left;
     }
 
 }
