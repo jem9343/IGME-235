@@ -7,7 +7,6 @@
 
 #bolded {
     font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-    font-style: bold;
     font-size: 30px;
     grid-row: 2;
     grid-column: 1;
@@ -36,8 +35,21 @@
 
 #mini-wrapper {
     border: 1px solid white;
-    grid-row: 4;
+    grid-row: 6/9;
     grid-column: 1;
+    display: grid;
+    grid: 100px 1fr / 150px 150px;
+}
+
+#specifications {
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    grid-column: span;
+    grid-row: 1;
+}
+
+#left {
+    grid-column: 1;
+    text-align: left;
 }
 
 #easy {
@@ -96,12 +108,11 @@ p {
         font-size: 14pt;
     }
 
-    p{
+    p {
         font-size: 12pt;
     }
 
-    #wrapper
-    {
+    #wrapper {
         grid-gap: 0 0;
         grid: 200px repeat(16, 110px) / 1fr;
         align-items: center;
@@ -109,81 +120,99 @@ p {
         height: 2000px;
     }
 
-    #bolded
-    {
+    #bolded {
         font-size: 14pt;
-        grid-row:2;
+        grid-row: 2;
     }
 
     #save {
         grid-row: 3;
         grid-column: 1;
     }
-    
+
     #mini-wrapper {
         border: 1px solid white;
         grid-row: 4;
         grid-column: 1;
     }
-    
+
     #easy {
         grid-row: 4;
         grid-column: 1;
     }
-    
+
     #dual {
         grid-row: 5;
         grid-column: 1;
     }
-    
+
     #better {
         grid-row: 6;
         grid-column: 1;
     }
-    
+
     #room {
         grid-row: 7;
         grid-column: 1;
     }
-    
+
     #industry-standard {
         grid-row: 8;
         grid-column: 1;
     }
-    
+
     #high {
         grid-row: 9 / 10;
         grid-column: 1;
     }
-    
+
     #more {
         grid-row: 10;
         grid-column: 1;
     }
-    
+
     #computerDollarQuote {
         grid-row: 11;
         grid-column: 1;
     }
 
-    body{
+    body {
         padding: 0 0.5em;
+    }
+
+
+    #mini-wrapper {
+        border: 1px solid white;
+        grid-row: 14;
+        grid-column: 1;
+        display: grid;
+        grid: 100px 1fr / 150px 150px;
+    }
+
+    #specifications {
+        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+        grid-column: span;
+        font-size: 14pt;
+        grid-row: 1;
+    }
+
+    #left {
+        grid-column: 1;
+        text-align: left;
     }
 
 }
 
-@media screen and (min-width: 700px) and (max-width: 800px)
-{
+@media screen and (min-width: 700px) and (max-width: 800px) {
     #quote {
         font-size: 16pt;
     }
 
-    p{
+    p {
         font-size: 12pt;
     }
 
-    #wrapper
-    {
+    #wrapper {
         grid-gap: 0 0;
         grid: 200px repeat(16, 110px) / 1fr;
         align-items: center;
@@ -191,62 +220,61 @@ p {
         justify-items: center;
     }
 
-    #bolded
-    {
+    #bolded {
         font-size: 14pt;
-        grid-row:2;
+        grid-row: 2;
     }
 
     #save {
         grid-row: 3;
         grid-column: 1;
     }
-    
+
     #mini-wrapper {
         border: 1px solid white;
         grid-row: 4;
         grid-column: 1;
     }
-    
+
     #easy {
         grid-row: 4;
         grid-column: 1;
     }
-    
+
     #dual {
         grid-row: 5;
         grid-column: 1;
     }
-    
+
     #better {
         grid-row: 6;
         grid-column: 1;
     }
-    
+
     #room {
         grid-row: 7;
         grid-column: 1;
     }
-    
+
     #industry-standard {
         grid-row: 8;
         grid-column: 1;
     }
-    
+
     #high {
         grid-row: 9 / 10;
         grid-column: 1;
     }
-    
+
     #more {
         grid-row: 10;
         grid-column: 1;
     }
-    
+
     body {
         background-color: rgb(13, 14, 15);
     }
-    
+
     #computerDollarQuote {
         grid-row: 11;
         grid-column: 1;
