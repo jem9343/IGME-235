@@ -362,25 +362,32 @@ img {
         font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
         font-size: 14pt;
         text-align: center;
-        display:block;
+        display: block;
     }
 
 
     #left {
         text-align: left;
         font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-        display:block;
+        display: block;
     }
 
     #right {
         font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
         padding-left: 1em;
-        display:block;
+        display: block;
     }
 
     img {
         display: none;
     }
 
-
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+    }
 }
