@@ -3,6 +3,7 @@
 body {
     background-color: rgb(26, 31, 69) !important;
     font-family: sans-serif;
+    overflow: auto;
 }
 
 #quote {
@@ -67,7 +68,7 @@ p {
     text-align: center;
 }
 
-#left {
+.left {
     grid-column: 1;
     grid-row: 2/6;
     text-align: left;
@@ -75,7 +76,7 @@ p {
     padding-left: 2em;
 }
 
-#right {
+.right {
     font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
     grid-column: 2;
     grid-row: 2/6;
@@ -83,8 +84,7 @@ p {
 }
 
 img {
-    display: block;
-    width: 500px;
+    width: 250px;
 }
 
 /* - - - - */
@@ -93,10 +93,9 @@ img {
 #artwrapper {
     background-color: rgb(225, 225, 223);
     height: 600px;
-    margin: 2em -0.1em;
+    margin: 2em 0em;
     display: grid;
     justify-items: center;
-
 }
 
 
@@ -106,7 +105,7 @@ img {
 
 #gamewrapper {
   
-    height: 500px;
+    height: 700px;
     margin: 2em ;
     margin-left: auto;
     margin-right: auto;
@@ -125,7 +124,7 @@ img {
     margin: 0 0 2em 0;
     border: 1px solid white;
     text-align: center;
-    width: 1250px;
+    width: 1175px;
     margin-left: auto;
     margin-right:auto;
 }
@@ -158,9 +157,129 @@ img {
     margin-bottom: 2em;
 }
 
+/* - - - - */
+/* NAVIGATION SET UP */
+/* - - - - */
+nav,
+footer {
+    font-family: sans-serif;
+    background-color: rgb(22, 92, 134);
+}
+
+nav ul li a:link,
+nav ul li a:visited {
+    color: rgb(225, 225, 223);
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+
+nav ul li a:focus,
+nav ul li a:hover,
+nav ul li a:active {
+    color: rgb(83, 154, 138);
+}
+
+nav ul {
+    margin: 0;
+}
+
+nav ul li {
+    font-size: 12pt;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: right;
+}
+
+nav ul li a {
+    display: block;
+    border: 1px solid;
+    border-radius: .25em;
+    padding: .5em 2em;
+    margin: .5em;
+}
+
+nav h1{
+    float:left;
+    font-size: 20pt;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: rgb(225, 225, 223);
+    padding: .15em 0 0 0.15em;
+    margin: .5em;
+}
+
+
+/* - - - - */
+/* CAROUSEL SET UP */
+/* - - - - */
+
+.carousel {
+    height: 500px;
+    margin-bottom: 60px;
+}
+
+
+.carousel-caption {
+    z-index: 10;
+    /* Since positioning the image, we need to help out the caption */
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+    height: 500px;
+    background-color: #777;
+}
+
+.carousel-inner>.item>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+}
+
+/* - - - - */
+/* GAMES 1 SET UP */
+/* - - - - */
+
+#game1
+{
+    background-color: rgb(225, 225, 223);
+    height: 600px;
+    margin: 2em 0em;
+    display: block;
+    justify-items: center;
+}
+
+.info-wrapper{
+    display: grid;
+    grid: 100px 100px 100px / 200px;
+}
+
+.basicInfo {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    text-align: left;
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 2em;
+}
+
+#game1 img{
+    float:left;
+}
+/* - - - - */
+/* RESPONSIVENESS */
+/* - - - - */
 @media screen and (min-width: 1300px) {
     #quote {
-        font-size: 23pt;
+        font-size: 30pt;
         font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
         grid-row: 1;
         grid-column: 1 / 4;
@@ -171,10 +290,10 @@ img {
 
     #save {
         font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-        font-size: 16pt;
+        font-size: 28pt;
         grid-row: 2;
         grid-column: 1;
-        width: 425px;
+        width: 525px;
         text-align: left;
     }
 
@@ -182,29 +301,29 @@ img {
         display: grid;
         justify-items: center;
         margin-left: auto;
-        width: 1250px;
+        width: 1175px;
         margin-right: auto;
         border: 1px solid rgb(225, 225, 223);
-        grid: 175px repeat(6, 120px) / 1fr 1fr;
+        grid:repeat(5, 100px) / 1fr 1fr;
         align-items: center;
         color: rgb(225, 225, 223);
         justify-items: center;
         grid-gap: 0em 0;
-        padding: 0 2%;
-        height: 900px;
+        padding: 0 100px;
+        height: 500px;
         text-align: justify;
 
     }
 
     #right-big {
         grid-column: 2;
-        grid-row: 4;
+        grid-row: 3;
     }
 
     #left-big {
         grid-column: 1;
         grid-row: 3;
-        width: 425px;
+        width: 525px;
     }
 
     #computerDollarQuote {
@@ -221,15 +340,17 @@ img {
 
     #mini-wrapper {
         border: 1px solid rgb(18, 124, 145);
-        grid-row: 5;
+        grid-row: 4;
         grid-column: 1;
         display: grid;
-        grid: 60px 100px 100px 75px/ 200px 200px;
+        grid: 60px 50px 50px / 250px 250px;
         font-size: 12pt;
         margin-left: auto;
         margin-right: auto;
         padding: 0px 10px;
         font-size: 11pt;
+        margin-top: 50px;
+        overflow:auto;
     }
 
     #specifications {
@@ -243,7 +364,7 @@ img {
 
     #left {
         grid-column: 1;
-        grid-row: 2/6;
+        grid-row: 2/3;
         text-align: left;
         font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
         padding-left: 1em;
@@ -252,7 +373,7 @@ img {
     #right {
         font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
         grid-column: 2;
-        grid-row: 2/6;
+        grid-row: 2/3;
         padding-left: 1em;
         text-align: left;
     }
@@ -271,7 +392,7 @@ img {
         font-size: 12pt;
     }
 
-    #mini-wrapper {
+    .mini-wrapper {
         border: 1px solid white;
         grid-row: 6;
         grid-column: 1;
@@ -428,81 +549,4 @@ img {
     }
 
 
-}
-
-/* - - - - */
-/* NAVIGATION SET UP */
-/* - - - - */
-nav,
-footer {
-    font-family: sans-serif;
-    background-color: rgb(22, 92, 134);
-}
-
-nav ul li a:link,
-nav ul li a:visited {
-    color: rgb(225, 225, 223);
-    transition-property: color;
-    transition-duration: 0.5s;
-}
-
-nav ul li a:focus,
-nav ul li a:hover,
-nav ul li a:active {
-    color: rgb(83, 154, 138);
-}
-
-nav ul {
-    margin: 0;
-}
-
-nav ul li {
-    font-size: 12pt;
-    text-transform: uppercase;
-    letter-spacing: .2em;
-}
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    display: flex;
-    justify-content: right;
-}
-
-nav ul li a {
-    display: block;
-    border: 1px solid;
-    border-radius: .25em;
-    padding: .5em 2em;
-    margin: .5em;
-}
-
-/* - - - - */
-/* CAROUSEL SET UP */
-/* - - - - */
-
-.carousel {
-    height: 500px;
-    margin-bottom: 60px;
-}
-
-
-.carousel-caption {
-    z-index: 10;
-    /* Since positioning the image, we need to help out the caption */
-}
-
-/* Declare heights because of positioning of img element */
-.carousel .item {
-    height: 500px;
-    background-color: #777;
-}
-
-.carousel-inner>.item>img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    height: 500px;
 }
