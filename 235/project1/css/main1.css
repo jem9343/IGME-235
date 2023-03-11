@@ -3,6 +3,7 @@
 body {
     background-color: rgb(26, 31, 69) !important;
     font-family: sans-serif;
+    display: auto;
 }
 
 #quote {
@@ -93,7 +94,7 @@ img {
 #artwrapper {
     background-color: rgb(225, 225, 223);
     height: 600px;
-    margin: 2em -0.1em;
+    margin: 2em 0;
     display: grid;
     justify-items: center;
 
@@ -105,41 +106,41 @@ img {
 /* - - - - */
 
 #gamewrapper {
-  
-    height: 500px;
-    margin: 2em ;
+
+    height: 700px;
+    margin: 2em;
     margin-left: auto;
     margin-right: auto;
     transition-property: transform;
-   transition-duration: 1s;
-}
-#gamewrapper ul li:hover {
-  
-   transform: translateY(-30px);
+    transition-duration: 1s;
 }
 
-#gamewrapper h2
-{
-    color:white;
+#gamewrapper ul li:hover {
+
+    transform: translateY(-30px);
+}
+
+#gamewrapper h2 {
+    color: white;
     padding: 1em;
     margin: 0 0 2em 0;
     border: 1px solid white;
     text-align: center;
     width: 1250px;
     margin-left: auto;
-    margin-right:auto;
+    margin-right: auto;
 }
 
-#gamewrapper ul{
+#gamewrapper ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
     display: flex;
     justify-content: space-around;
-    
+
 }
-#gamewrapper ul li
-{
+
+#gamewrapper ul li {
     display: block;
     background-color: white;
     padding: .5em 3em;
@@ -147,17 +148,51 @@ img {
     width: 500px;
     text-align: center;
     transition-property: transform;
-   transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
 
-#gamewrapper ul li img
-{
+#gamewrapper ul li img {
     width: 200px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2em;
 }
 
+.game {
+    background-color: rgb(225, 225, 223);
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3em 2em;
+    display: grid;
+    grid: 105px 205px 205px / 300px 300px 500px;
+    justify-content: center;
+    justify-items: stretch;
+    align-items: stretch;
+    
+}
+.imgsection {
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+    border:1px solid red;
+}
+.imgsection img{
+    width: 200px;
+}
+.info
+{
+  grid-row: 2/4;
+  grid-column: 3;
+  border:1px solid red;
+  padding: 0 2em;
+}
+.game h1{
+    grid-column: 3;
+    grid-row: 1/2;
+    background-color:#777;
+    margin: 0;
+    padding: 1em;
+}
 @media screen and (min-width: 1300px) {
     #quote {
         font-size: 23pt;
@@ -182,18 +217,22 @@ img {
         display: grid;
         justify-items: center;
         margin-left: auto;
+        margin-top: -2em;
         width: 1250px;
         margin-right: auto;
         border: 1px solid rgb(225, 225, 223);
-        grid: 175px repeat(6, 120px) / 1fr 1fr;
+        grid: 50px repeat(5, 90px) / 1fr 1fr;
         align-items: center;
         color: rgb(225, 225, 223);
         justify-items: center;
         grid-gap: 0em 0;
         padding: 0 2%;
-        height: 900px;
+        height: 500px;
         text-align: justify;
+    }
 
+    .wrapper img {
+        width: 300px;
     }
 
     #right-big {
@@ -224,12 +263,14 @@ img {
         grid-row: 5;
         grid-column: 1;
         display: grid;
-        grid: 60px 100px 100px 75px/ 200px 200px;
+        grid: repeat(4, 50px) / 200px 200px;
         font-size: 12pt;
         margin-left: auto;
         margin-right: auto;
         padding: 0px 10px;
         font-size: 11pt;
+        overflow: auto;
+        height: 200px;
     }
 
     #specifications {
