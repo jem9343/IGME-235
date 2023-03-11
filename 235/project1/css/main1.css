@@ -136,9 +136,7 @@ img {
     padding: 0;
     list-style-type: none;
     display: flex;
-    justify-content: space-around;
-    
-
+    justify-content: space-around; 
 }
 
 #gamewrapper ul li {
@@ -170,15 +168,35 @@ img {
     border-radius: .25em;
     padding: .5em 2em;
     margin: 0 5em;
+    font-family: sans-serif;
+    background-color: rgb(22, 92, 134);
 }
 
+#gamewrapper a:link, #gamewrapper a:visited {
+    color: rgb(225, 225, 223);
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+
+#gamewrapper a:focus, #gamewrapper a:hover, #gamewrapper a:active {
+    color:rgb(22, 92, 134);
+    background-color: (225, 225, 223);
+}
+
+
+.minibox
+{
+    border: 1px solid black;
+    width:850px;
+    margin-left: auto;
+}
 /* - - - - */
 /* INDIVIDUAL GAMES SECTION SET UP */
 /* - - - - */
 
 .game {
     background-color: rgb(225, 225, 223);
-    height: 1000px;
+    height: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -213,10 +231,13 @@ img {
     clear: left;
     margin: 0 auto 0 auto;
 }
+.gameImages h2{
+    margin: 1em;
+}
 
 .gameImages img{
     display: inline-block;
-    margin: -2em 1em 0 1em;
+    margin: 1em 1em 0 1em;
     height: 30%;
 }
 .gameImages #dude{
@@ -229,7 +250,7 @@ width: 250px;
 }
 .gameImages #guy
 {
-    width: 200px;
+    width: 250px;
 }
 
 .gameImages #couch
@@ -247,7 +268,7 @@ width: 250px;
 }
 .gameImages #matches
 {
-    width: 300px;
+    width: 250px;
 }
 
 
@@ -585,7 +606,6 @@ nav ul li a {
     height: 500px;
     margin-bottom: 60px;
 }
-
 
 .carousel-caption {
     z-index: 10;
