@@ -5,7 +5,18 @@ body {
     font-family: sans-serif;
     display: auto;
 }
-
+#resume
+{
+    color: white;
+    padding:2em;
+}
+h1{
+    color:white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
 #quote {
     font-size: 23pt;
     font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
@@ -19,9 +30,7 @@ body {
     font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
     font-size: 16pt;
     grid-row: 2;
-    grid-column: 1;
-    width: 425px;
-    text-align: left;
+    grid-column: 1 / 2;
 }
 
 #right-big {
@@ -51,13 +60,12 @@ p {
     border: 1px solid rgb(18, 124, 145);
     grid-row: 6;
     grid-column: 1;
-    display: grid;
-    grid: 60px 100px 100px 100px 100px 75px/ 200px 200px;
     font-size: 12pt;
     margin-left: auto;
     margin-right: auto;
     padding: 0px 10px;
     font-size: 11pt;
+    background-color: white;
 }
 
 #specifications {
@@ -97,9 +105,11 @@ img {
     margin: 2em 0;
     display: grid;
     justify-items: center;
-
 }
 
+#artwrapper img{
+    width: 700px;
+}
 
 /* - - - - */
 /* GAMES SECTION SET UP */
@@ -180,23 +190,17 @@ img {
 
 #gamewrapper a:focus, #gamewrapper a:hover, #gamewrapper a:active {
     color:rgb(22, 92, 134);
-    background-color: (225, 225, 223);
+    background-color: rgb(225, 225, 223);
 }
 
 
-.minibox
-{
-    border: 1px solid black;
-    width:850px;
-    margin-left: auto;
-}
 /* - - - - */
 /* INDIVIDUAL GAMES SECTION SET UP */
 /* - - - - */
 
 .game {
     background-color: rgb(225, 225, 223);
-    height: 1200px;
+    height: 700px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -208,14 +212,14 @@ img {
 }
 .info
 {
-  border:1px solid rgb(18, 124, 145);
+  border:5px solid rgb(18, 124, 145);
   padding: 2em;
   margin: 0 1em 0 1em;
 
 }
 .game h1{
     font-weight: bold;
-    padding: 1.5em 2em;
+    padding:1em;
 }
 .game h2{
     font-size: 20pt;
@@ -226,51 +230,55 @@ img {
     font-style:italic;
     line-height: 1.5em;
 }
-.gameImages
+
+.minibox
 {
-    clear: left;
-    margin: 0 auto 0 auto;
+    width:1300px;
+    margin-left: 950px;
+    background-color: rgb(22, 92, 134);
+    border: 5px solid rgb(22, 92, 134);
 }
-.gameImages h2{
+.minibox h3, .minibox h2{
     margin: 1em;
+    color: white;
+    font-size: 20pt;
+    width: 800px;
 }
 
-.gameImages img{
-    display: inline-block;
-    margin: 1em 1em 0 1em;
-    height: 30%;
-}
-.gameImages #dude{
-width: 250px;
-}
-
-.gameImages #key
-{
-    width: 300px;
-}
-.gameImages #guy
-{
-    width: 250px;
+.minibox a{
+    display: block;
+    border: 1px solid;
+    border-radius: .25em;
+    padding: 1.15em;
+    margin: .5em;
+    width: 350px;
+    height: 100px;
+    text-align: center;
+    background-color: rgb(22, 92, 134);
+    float:right;
+    margin: -5em 2em 0 0;
+    font-size: 20pt;
+    
 }
 
-.gameImages #couch
-{
-    width: 400px;
+iframe{
+    width:50%;
+    height:500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
-.gameImages #candle
-{
-    width: 200px;
-}
-.gameImages #bookcase
-{
-    width: 200px;
-}
-.gameImages #matches
-{
-    width: 250px;
+.minibox a:link, .minibox a:visited {
+    color: rgb(225, 225, 223);
+    transition-property: color;
+    transition-duration: 0.5s;
 }
 
+.minibox a:focus, .minibox a:hover,.minibox a:active {
+    color:rgb(22, 92, 134);
+    background-color: rgb(225, 225, 223);
+}
 
 @media screen and (min-width: 1300px) {
     #quote {
@@ -285,10 +293,10 @@ width: 250px;
 
     #save {
         font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-        font-size: 16pt;
-        grid-row: 2;
+        font-size: 26pt;
+        grid-row: 3;
         grid-column: 1;
-        width: 425px;
+        width: 600px;
         text-align: left;
     }
 
@@ -297,7 +305,7 @@ width: 250px;
         justify-items: center;
         margin-left: auto;
         margin-top: -2em;
-        width: 1250px;
+        width: 1075px;
         margin-right: auto;
         border: 1px solid rgb(225, 225, 223);
         grid: 50px repeat(5, 90px) / 1fr 1fr;
@@ -307,7 +315,6 @@ width: 250px;
         grid-gap: 0em 0;
         padding: 0 2%;
         height: 500px;
-        text-align: justify;
     }
 
     .wrapper img {
@@ -321,8 +328,8 @@ width: 250px;
 
     #left-big {
         grid-column: 1;
-        grid-row: 3;
-        width: 425px;
+        grid-row: 4/ 5;
+        width: 600px;
     }
 
     #computerDollarQuote {
@@ -332,24 +339,20 @@ width: 250px;
 
     p {
         margin: auto;
-        font-size: 11pt;
-        width: 425px;
+        font-size: 14pt;
+        width: 600px;
         align-self: baseline;
     }
 
     #mini-wrapper {
         border: 1px solid rgb(18, 124, 145);
-        grid-row: 5;
-        grid-column: 1;
-        display: grid;
-        grid: repeat(4, 50px) / 200px 200px;
         font-size: 12pt;
         margin-left: auto;
         margin-right: auto;
         padding: 0px 10px;
         font-size: 11pt;
-        overflow: auto;
-        height: 200px;
+        display: block;
+        height: 500px;
     }
 
     #specifications {
@@ -357,7 +360,8 @@ width: 250px;
         grid-column: 1 / 4;
         grid-row: 1;
         font-size: 14pt;
-        text-align: center;
+        text-align: left;
+        margin-top: -1em;
     }
 
 
@@ -465,8 +469,7 @@ width: 250px;
         font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
         font-size: 16pt;
         grid-row: 2;
-        grid-column: 1;
-        width: 350px;
+        grid-column: 1 / 2;
         text-align: left;
     }
 
@@ -553,8 +556,7 @@ width: 250px;
 /* - - - - */
 /* NAVIGATION SET UP */
 /* - - - - */
-nav,
-footer {
+nav {
     font-family: sans-serif;
     background-color: rgb(22, 92, 134);
 }
@@ -598,30 +600,3 @@ nav ul li a {
     margin: .5em;
 }
 
-/* - - - - */
-/* CAROUSEL SET UP */
-/* - - - - */
-
-.carousel {
-    height: 500px;
-    margin-bottom: 60px;
-}
-
-.carousel-caption {
-    z-index: 10;
-    /* Since positioning the image, we need to help out the caption */
-}
-
-/* Declare heights because of positioning of img element */
-.carousel .item {
-    height: 500px;
-    background-color: #777;
-}
-
-.carousel-inner>.item>img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    height: 500px;
-}
