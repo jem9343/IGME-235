@@ -62,7 +62,7 @@ img {
 
 #save {
     font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-    font-size: 26pt;
+    font-size: 30pt;
     grid-row: 3;
     grid-column: 1;
     width: 600px;
@@ -477,11 +477,11 @@ iframe {
 
 @media screen and (min-width: 1010px) and (max-width: 1250px) {
     .wrapper {
-        width: 80vw;
+        width: 90vw;
     }
 
     #right-big img {
-        margin: 0 0 0 -7em;
+        margin: 0 0 0 2em;
         width: 25vw;
     }
 
@@ -492,8 +492,12 @@ iframe {
         font-size: 14pt;
     }
 
+    #left-big{
+       padding-top: 2em;
+    }
+
     p {
-        width: 500px;
+        width: 50vw;
     }
 
     #gamewrapper {
@@ -574,17 +578,133 @@ iframe {
 
 }
 
-@media screen and (max-width: 1010px) {
-    .wrapper {
-        width: 80vw;
-    }
-
+@media screen and (min-width: 760px) and (max-width: 1010px) {
     .wrapper{
-        grid: 50px repeat(5, 90px) / 35vw 35vw;
+        grid: 50px repeat(5, 90px) / 43vw 43vw;
+        width: 90vw;
     }
 
     #right-big img {
         margin: 0 0 0 0;
+        width: 200px;
+    }
+
+    #right-big{
+        grid-row: 2 / 4;
+        grid-column: 2;
+    }
+    #left-big{
+        width:30vw;
+        grid-row: 5;
+        grid-column: 1 / 2;
+    }
+
+    #gamewrapper ul li {
+        padding: .5em 1em;
+        margin: 2.5em auto 2.5em auto;
+        width: 80%;
+        font-size: 14pt;
+    }
+
+    p {
+        width: 70vw;
+    }
+    #save{
+        grid-row: 2;
+        grid-column: 1;
+        width: 30vw;
+        margin: 0;
+        font-size:30pt;
+    }
+    #gamewrapper {
+        height:fit-content;
+    }
+
+    .info {
+        margin: 2em auto 2em auto;
+        width: 80%;
+    }
+
+    .minibox a {
+        width: 200px;
+        float: right;
+        margin: -7em 2em 0 0;
+        font-size: 15pt;
+    }
+
+    .game {
+        height:fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 2em;
+    }
+
+    .gameimg {
+        width: 60vw;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+    }
+
+    .game h1 {
+        font-weight: bold;
+        padding: 0.5em;
+        clear: both;
+    }
+
+    .game h2 {
+        font-size: 20pt;
+    }
+
+    .game h3 {
+        font-size: 15pt;
+        font-style: italic;
+        line-height: 1.5em;
+        margin: 0;
+        width: 70vw;
+        padding: 0 0 1em 0;
+    }
+
+    .minibox {
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    .minibox h3,
+    .minibox h2 {
+        margin: 1em;
+        color: white;
+        font-size: 16pt;
+        width: 35vw;
+    }
+
+
+    #gamewrapper ul {
+        display: block;
+    }
+
+    #artwrapper img{
+        width: 80vw;
+    }
+
+    #artwrapper{
+        height:fit-content;
+    }
+}
+
+@media screen and (min-width: 560px) and (max-width: 760px) {
+    nav ul li {
+        font-size: 10pt;
+    }
+
+    .wrapper{
+        grid: 50px repeat(5, 90px) / 43vw 43vw;
+        width: 90vw;
+    }
+
+    #right-big img {
+        margin:0;
         width: 25vw;
     }
 
@@ -625,9 +745,8 @@ iframe {
 
     .minibox a {
         width: 200px;
-        height: 100px;
         float: right;
-        margin: -5em 2em 0 0;
+        margin: -7em 2em 0 0;
         font-size: 15pt;
     }
 
@@ -661,7 +780,7 @@ iframe {
         font-style: italic;
         line-height: 1.5em;
         margin: 0;
-        width: 75vw;
+        width: 70vw;
         padding: 0 0 1em 0;
     }
 
@@ -678,24 +797,140 @@ iframe {
         width: 35vw;
     }
 
-    .minibox a {
-
-        width: 350px;
-        height: 100px;
-        margin: -5em 2em 0 0;
-        font-size: 20pt;
-
-    }
 
     #gamewrapper ul {
         display: block;
     }
 
     #artwrapper img{
-        width: 90vw;
+        width: 80vw;
     }
 
     #artwrapper{
         height:fit-content;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    nav ul li {
+        font-size: 8pt;
+    }
+
+    .wrapper{
+        grid: 50px repeat(5, 90px) / 43vw 43vw;
+        width: 90vw;
+    }
+
+    #right-big img {
+        margin:0;
+        width: 25vw;
+    }
+
+    #right-big{
+        grid-row: 1 / 4;
+        grid-column: 2;
+    }
+    #left-big{
+        width:30vw;
+        grid-row: 5;
+        grid-column: 1 / 2;
+    }
+
+    #gamewrapper ul li {
+        padding: .5em 1em;
+        margin: 2.5em auto 2.5em auto;
+        width: 80%;
+        font-size: 14pt;
+    }
+
+    p {
+        width: 70vw;
+    }
+    #save{
+        grid-row: 2;
+        grid-column: 1;
+        width: 30vw;
+        margin: 0;
+        font-size: 22pt;
+    }
+
+    #gamewrapper {
+        height:fit-content;
+    }
+
+    .info {
+        margin: 2em auto 2em auto;
+        width: 80%;
+    }
+
+    .minibox a {
+        width: 200px;
+        float: right;
+        margin: -7em 2em 0 0;
+        font-size: 15pt;
+    }
+
+    .game {
+        height:fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 2em;
+    }
+
+    .gameimg {
+        width: 60vw;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+    }
+
+    .game h1 {
+        font-weight: bold;
+        padding: 0.5em;
+        clear: both;
+    }
+
+    .game h2 {
+        font-size: 20pt;
+    }
+
+    .game h3 {
+        font-size: 15pt;
+        font-style: italic;
+        line-height: 1.5em;
+        margin: 0;
+        width: 70vw;
+        padding: 0 0 1em 0;
+    }
+
+    .minibox {
+        width: 100%;
+        margin-left: 0%;
+        height: 300px;
+    }
+
+    .minibox h3,
+    .minibox h2 {
+        margin: 1em;
+        color: white;
+        font-size: 16pt;
+        width: 35vw;
+    }
+
+    
+    #gamewrapper ul {
+        display: block;
+    }
+
+    #artwrapper img{
+        width: 80vw;
+    }
+
+    #artwrapper{
+        height:fit-content;
+    }
+    .info h3{
+        width: 50vw;
     }
 }
