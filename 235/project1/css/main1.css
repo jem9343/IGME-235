@@ -445,7 +445,7 @@ iframe {
         font-size: 15pt;
         font-style: italic;
         line-height: 1.5em;
-        margin:0;
+        margin: 0;
         width: 75vw;
         padding: 0 0 1em 0;
     }
@@ -473,17 +473,28 @@ iframe {
 
 }
 
-@media screen and (max-width: 1250px)
-{
+@media screen and (max-width: 1250px) {
+    .wrapper {
+        width: 850px;
+    }
+
+    #right-big img {
+        margin: 0 0 0 -7em;
+    }
+
     #gamewrapper ul li {
         padding: .5em 1em;
-        margin: .5em;
-        width: 400px;
+        margin: 2.5em auto 2.5em auto;
+        width: 80%;
         font-size: 14pt;
     }
 
+    p {
+        width: 500px;
+    }
+
     #gamewrapper {
-        height: 700px;
+        min-height: 1450px;
     }
 
     .info {
@@ -500,7 +511,7 @@ iframe {
     }
 
     .game {
-        min-height: 1400px;
+        min-height: 1250px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -527,7 +538,7 @@ iframe {
         font-size: 15pt;
         font-style: italic;
         line-height: 1.5em;
-        margin:0;
+        margin: 0;
         width: 75vw;
         padding: 0 0 1em 0;
     }
@@ -553,4 +564,9 @@ iframe {
         font-size: 20pt;
 
     }
+
+    #gamewrapper ul {
+        display: block;
+    }
+
 }
