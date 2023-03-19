@@ -5,18 +5,31 @@ body {
     font-family: sans-serif;
     display: auto;
 }
-#resume
-{
+
+h1 {
     color: white;
-    padding:2em;
-}
-h1{
-    color:white;
     display: block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
+
+p {
+    margin: auto;
+    font-size: 14pt;
+    width: 600px;
+    align-self: baseline;
+}
+
+img {
+    display: block;
+    width: 500px;
+}
+
+
+/* - - - - */
+/* HEADER SECTION SET UP */
+/* - - - - */
 #quote {
     font-size: 23pt;
     font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
@@ -26,12 +39,36 @@ h1{
     text-align: center;
 }
 
+.wrapper {
+    display: grid;
+    justify-items: center;
+    margin-left: auto;
+    margin-top: -2em;
+    width: 1075px;
+    margin-right: auto;
+    border: 1px solid rgb(225, 225, 223);
+    grid: 50px repeat(5, 90px) / 1fr 1fr;
+    align-items: center;
+    color: rgb(225, 225, 223);
+    justify-items: center;
+    grid-gap: 0em 0;
+    padding: 0 2%;
+    height: 500px;
+}
+
+.wrapper img {
+    width: 300px;
+}
+
 #save {
     font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-    font-size: 16pt;
-    grid-row: 2;
-    grid-column: 1 / 2;
+    font-size: 26pt;
+    grid-row: 3;
+    grid-column: 1;
+    width: 600px;
+    text-align: left;
 }
+
 
 #right-big {
     grid-column: 2;
@@ -49,23 +86,15 @@ h1{
     grid-column: 2;
 }
 
-p {
-    margin: auto;
-    font-size: 11pt;
-    width: 425px;
-    align-self: baseline;
+#right-big {
+    grid-column: 2;
+    grid-row: 4;
 }
 
-#mini-wrapper {
-    border: 1px solid rgb(18, 124, 145);
-    grid-row: 6;
+#left-big {
     grid-column: 1;
-    font-size: 12pt;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0px 10px;
-    font-size: 11pt;
-    background-color: white;
+    grid-row: 4/ 5;
+    width: 600px;
 }
 
 #specifications {
@@ -73,27 +102,8 @@ p {
     grid-column: 1 / 4;
     grid-row: 1;
     font-size: 14pt;
-    text-align: center;
-}
-
-#left {
-    grid-column: 1;
-    grid-row: 2/6;
     text-align: left;
-    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-    padding-left: 2em;
-}
-
-#right {
-    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-    grid-column: 2;
-    grid-row: 2/6;
-    padding-left: 1em;
-}
-
-img {
-    display: block;
-    width: 500px;
+    margin-top: -1em;
 }
 
 /* - - - - */
@@ -101,14 +111,14 @@ img {
 /* - - - - */
 #artwrapper {
     background-color: rgb(225, 225, 223);
-    height: 600px;
+    height: 700px;
     margin: 2em 0;
     display: grid;
     justify-items: center;
 }
 
-#artwrapper img{
-    width: 700px;
+#artwrapper img {
+    width: 800px;
 }
 
 /* - - - - */
@@ -136,7 +146,7 @@ img {
     margin: 0 0 2em 0;
     border: 1px solid white;
     text-align: center;
-    width: 1250px;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -146,7 +156,7 @@ img {
     padding: 0;
     list-style-type: none;
     display: flex;
-    justify-content: space-around; 
+    justify-content: space-around;
 }
 
 #gamewrapper ul li {
@@ -161,7 +171,7 @@ img {
     font-size: 14pt;
 }
 
-#gamewrapper h3{
+#gamewrapper h3 {
     font-weight: bold;
 }
 
@@ -171,8 +181,9 @@ img {
     margin-right: auto;
     margin-bottom: 2em;
 }
-#gamewrapper a{
-   
+
+#gamewrapper a {
+
     display: block;
     border: 1px solid;
     border-radius: .25em;
@@ -182,14 +193,17 @@ img {
     background-color: rgb(22, 92, 134);
 }
 
-#gamewrapper a:link, #gamewrapper a:visited {
+#gamewrapper a:link,
+#gamewrapper a:visited {
     color: rgb(225, 225, 223);
     transition-property: color;
     transition-duration: 0.5s;
 }
 
-#gamewrapper a:focus, #gamewrapper a:hover, #gamewrapper a:active {
-    color:rgb(22, 92, 134);
+#gamewrapper a:focus,
+#gamewrapper a:hover,
+#gamewrapper a:active {
+    color: rgb(22, 92, 134);
     background-color: rgb(225, 225, 223);
 }
 
@@ -205,47 +219,49 @@ img {
     margin-right: auto;
 }
 
-.gameimg{
-    width: 1000px;
+.gameimg {
+    width: 40vw;
     float: left;
     padding: 2em;
 }
-.info
-{
-  border:5px solid rgb(18, 124, 145);
-  padding: 2em;
-  margin: 0 1em 0 1em;
 
+.info {
+    border: 5px solid rgb(18, 124, 145);
+    padding: 2em;
+    margin: 0 1em 0 1em;
 }
-.game h1{
+
+.game h1 {
     font-weight: bold;
-    padding:1em;
+    padding: 1em;
 }
-.game h2{
+
+.game h2 {
     font-size: 20pt;
 }
 
-.game h3{
+.game h3 {
     font-size: 16pt;
-    font-style:italic;
+    font-style: italic;
     line-height: 1.5em;
 }
 
-.minibox
-{
-    width:1300px;
-    margin-left: 950px;
+.minibox {
+    width: 60%;
+    margin-left: 40%;
     background-color: rgb(22, 92, 134);
     border: 5px solid rgb(22, 92, 134);
 }
-.minibox h3, .minibox h2{
+
+.minibox h3,
+.minibox h2 {
     margin: 1em;
     color: white;
-    font-size: 20pt;
-    width: 800px;
+    font-size: 16pt;
+    width: 600px;
 }
 
-.minibox a{
+.minibox a {
     display: block;
     border: 1px solid;
     border-radius: .25em;
@@ -255,302 +271,24 @@ img {
     height: 100px;
     text-align: center;
     background-color: rgb(22, 92, 134);
-    float:right;
+    float: right;
     margin: -5em 2em 0 0;
     font-size: 20pt;
-    
+
 }
 
-iframe{
-    width:50%;
-    height:500px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
-.minibox a:link, .minibox a:visited {
+.minibox a:link,
+.minibox a:visited {
     color: rgb(225, 225, 223);
     transition-property: color;
     transition-duration: 0.5s;
 }
 
-.minibox a:focus, .minibox a:hover,.minibox a:active {
-    color:rgb(22, 92, 134);
+.minibox a:focus,
+.minibox a:hover,
+.minibox a:active {
+    color: rgb(22, 92, 134);
     background-color: rgb(225, 225, 223);
-}
-
-@media screen and (min-width: 1300px) {
-    #quote {
-        font-size: 23pt;
-        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-        grid-row: 1;
-        grid-column: 1 / 4;
-        padding: 0 0em;
-        color: rgb(83, 154, 138);
-        text-align: center;
-    }
-
-    #save {
-        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-        font-size: 26pt;
-        grid-row: 3;
-        grid-column: 1;
-        width: 600px;
-        text-align: left;
-    }
-
-    .wrapper {
-        display: grid;
-        justify-items: center;
-        margin-left: auto;
-        margin-top: -2em;
-        width: 1075px;
-        margin-right: auto;
-        border: 1px solid rgb(225, 225, 223);
-        grid: 50px repeat(5, 90px) / 1fr 1fr;
-        align-items: center;
-        color: rgb(225, 225, 223);
-        justify-items: center;
-        grid-gap: 0em 0;
-        padding: 0 2%;
-        height: 500px;
-    }
-
-    .wrapper img {
-        width: 300px;
-    }
-
-    #right-big {
-        grid-column: 2;
-        grid-row: 4;
-    }
-
-    #left-big {
-        grid-column: 1;
-        grid-row: 4/ 5;
-        width: 600px;
-    }
-
-    #computerDollarQuote {
-        grid-row: 7;
-        grid-column: 2;
-    }
-
-    p {
-        margin: auto;
-        font-size: 14pt;
-        width: 600px;
-        align-self: baseline;
-    }
-
-    #mini-wrapper {
-        border: 1px solid rgb(18, 124, 145);
-        font-size: 12pt;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0px 10px;
-        font-size: 11pt;
-        display: block;
-        height: 500px;
-    }
-
-    #specifications {
-        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-        grid-column: 1 / 4;
-        grid-row: 1;
-        font-size: 14pt;
-        text-align: left;
-        margin-top: -1em;
-    }
-
-
-    #left {
-        grid-column: 1;
-        grid-row: 2/6;
-        text-align: left;
-        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-        padding-left: 1em;
-    }
-
-    #right {
-        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-        grid-column: 2;
-        grid-row: 2/6;
-        padding-left: 1em;
-        text-align: left;
-    }
-
-}
-
-
-@media screen and (max-width: 700px) {
-    #quote {
-        font-size: 12pt;
-        text-align: left;
-        width: 300px;
-    }
-
-    p {
-        font-size: 12pt;
-    }
-
-    #mini-wrapper {
-        border: 1px solid white;
-        grid-row: 6;
-        grid-column: 1;
-        display: grid;
-        grid: 60px 100px 100px 100px 100px 75px/ 200px 200px;
-        font-size: 12pt;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0px 10px;
-        font-size: 11pt;
-    }
-
-
-    .wrapper {
-        grid-gap: 0 0;
-        grid: 200px repeat(16, 110px) / 1fr;
-        align-items: center;
-        justify-items: center;
-        height: 2000px;
-    }
-
-
-
-    #computerDollarQuote {
-        grid-row: 11;
-        grid-column: 1;
-    }
-
-    body {
-        padding: 0 0.5em;
-        background-color: rgb(26, 31, 69);
-    }
-
-
-    #mini-wrapper {
-        border: 1px solid white;
-        grid-row: 14;
-        grid-column: 1;
-        display: grid;
-        grid: 100px 1fr / 150px 150px;
-    }
-
-    #specifications {
-        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-        grid-column: span;
-        font-size: 14pt;
-        grid-row: 1;
-    }
-
-    #left {
-        grid-column: 1;
-        grid-row: 6;
-        text-align: left;
-        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-        padding-left: 2em;
-    }
-
-}
-
-@media screen and (min-width: 700px) and (max-width: 1300px) {
-    #quote {
-        font-size: 20pt;
-        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-        grid-row: 1;
-        grid-column: 1 / 4;
-        padding: 0 0em;
-        text-align: center;
-    }
-
-    #save {
-        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-        font-size: 16pt;
-        grid-row: 2;
-        grid-column: 1 / 2;
-        text-align: left;
-    }
-
-    .wrapper {
-        display: grid;
-        margin-left: auto;
-        width: 70%;
-        margin-right: auto;
-        border: 1px solid rgb(255, 255, 255);
-        color: white;
-        grid: 175px repeat(5, 200px) / 1fr 1fr;
-        align-items: center;
-        justify-items: center;
-        grid-gap: 0em 0;
-        padding: 0 2%;
-        height: 1250px;
-        text-align: justify;
-        background-color: rgb(26, 31, 69);
-        border-radius: .25em;
-    }
-
-    #right-big {
-        grid-column: 2;
-        grid-row: 4;
-    }
-
-    #left-big {
-        grid-column: 1;
-        grid-row: 3;
-        width: 350px;
-    }
-
-    #computerDollarQuote {
-        grid-row: 7;
-        grid-column: 2;
-    }
-
-    p {
-        margin: auto;
-        font-size: 11pt;
-        width: 350px;
-        align-self: baseline;
-    }
-
-    #mini-wrapper {
-        border: 1px solid white;
-        grid-row: 5;
-        grid-column: 1;
-        font-size: 12pt;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0px 10px;
-        font-size: 11pt;
-    }
-
-    #specifications {
-        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-        font-size: 14pt;
-        text-align: center;
-        display: block;
-    }
-
-
-    #left {
-        text-align: left;
-        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-        display: block;
-    }
-
-    #right {
-        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-        padding-left: 1em;
-        text-align: left;
-        display: block;
-    }
-
-    img {
-        display: none;
-    }
-
-
 }
 
 /* - - - - */
@@ -600,3 +338,219 @@ nav ul li a {
     margin: .5em;
 }
 
+/* - - - - */
+/* FOOTER SET UP */
+/* - - - - */
+
+footer {
+    height: 800px;
+}
+
+iframe {
+    width: 80%;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#RESUME {
+    color: white;
+    padding: 2em;
+}
+
+
+/* - - - - */
+/* RESPONSIVENESS */
+/* - - - - */
+
+
+@media screen and (min-width: 1730px) and (max-width: 2075px) {
+    #gamewrapper ul li {
+        padding: .5em 1em;
+        margin: .5em;
+        width: 450px;
+        font-size: 14pt;
+    }
+
+    .info {
+        border: 3px solid rgb(18, 124, 145);
+        padding: 1em;
+    }
+
+    .info>h3 {
+        width: 900px;
+        margin-left: 38vw;
+    }
+
+    .minibox a {
+        width: 300px;
+        height: 100px;
+        float: right;
+        margin: -5em 2em 0 0;
+        font-size: 18pt;
+    }
+}
+
+@media screen and (min-width: 1250px) and (max-width: 1730px) {
+    #gamewrapper ul li {
+        padding: .5em 1em;
+        margin: .5em;
+        width: 400px;
+        font-size: 14pt;
+    }
+
+    #gamewrapper {
+        height: 700px;
+    }
+
+    .info {
+        margin: 2em auto 2em auto;
+        width: 80%;
+    }
+
+    .minibox a {
+        width: 200px;
+        height: 100px;
+        float: right;
+        margin: -5em 2em 0 0;
+        font-size: 15pt;
+    }
+
+    .game {
+        min-height: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .gameimg {
+        width: 60vw;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+    }
+
+    .game h1 {
+        font-weight: bold;
+        padding: 0.5em;
+        clear: both;
+    }
+
+    .game h2 {
+        font-size: 20pt;
+    }
+
+    .game h3 {
+        font-size: 15pt;
+        font-style: italic;
+        line-height: 1.5em;
+        margin:0;
+        width: 75vw;
+        padding: 0 0 1em 0;
+    }
+
+    .minibox {
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    .minibox h3,
+    .minibox h2 {
+        margin: 1em;
+        color: white;
+        font-size: 16pt;
+        width: 35vw;
+    }
+
+    .minibox a {
+
+        width: 350px;
+        height: 100px;
+        margin: -5em 2em 0 0;
+        font-size: 20pt;
+    }
+
+}
+
+@media screen and (max-width: 1250px)
+{
+    #gamewrapper ul li {
+        padding: .5em 1em;
+        margin: .5em;
+        width: 400px;
+        font-size: 14pt;
+    }
+
+    #gamewrapper {
+        height: 700px;
+    }
+
+    .info {
+        margin: 2em auto 2em auto;
+        width: 80%;
+    }
+
+    .minibox a {
+        width: 200px;
+        height: 100px;
+        float: right;
+        margin: -5em 2em 0 0;
+        font-size: 15pt;
+    }
+
+    .game {
+        min-height: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .gameimg {
+        width: 60vw;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+    }
+
+    .game h1 {
+        font-weight: bold;
+        padding: 0.5em;
+        clear: both;
+    }
+
+    .game h2 {
+        font-size: 20pt;
+    }
+
+    .game h3 {
+        font-size: 15pt;
+        font-style: italic;
+        line-height: 1.5em;
+        margin:0;
+        width: 75vw;
+        padding: 0 0 1em 0;
+    }
+
+    .minibox {
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    .minibox h3,
+    .minibox h2 {
+        margin: 1em;
+        color: white;
+        font-size: 16pt;
+        width: 35vw;
+    }
+
+    .minibox a {
+
+        width: 350px;
+        height: 100px;
+        margin: -5em 2em 0 0;
+        font-size: 20pt;
+
+    }
+}
