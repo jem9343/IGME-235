@@ -1,0 +1,113 @@
+
+#wrapper{
+    width:80%;
+    margin: -1em auto 0 auto;
+    padding: 50px 10px 100px 10px;
+    background-color: rgb(245, 218, 143);
+}
+
+#quoteArea {
+    display: block;
+    margin: 2em auto 0 auto;
+    width: 900px;
+    height: 500px;
+    background-image: url("Sherlock-Holmes.jpg");
+    background-size: cover;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    display: block;
+    margin: 10px auto 10px auto;
+    width: fit-content;
+    font-size: 35pt;
+}
+
+footer {
+    display: block;
+    margin: 10px auto 10px auto;
+    width: fit-content;
+    font-size: 20pt;
+}
+
+#quoteArea h2 {
+    display: block;
+    float: right;
+    margin: 10px;
+    font-size: 18pt;
+}
+
+#quoteArea p {
+    display: block;
+    float: right;
+    clear: both;
+    margin: 20px 50px 20px 20px;
+    height: 300px;
+    width: 325px;
+    text-align: center;
+    font-size: 20pt;
+    display: block;
+    overflow: hidden;
+}
+
+button {
+    float: right;
+    clear: both;
+    margin: 10px 215px;
+    width: 200px;
+    font-size: 20pt;
+    background-color: white;
+    border: rgb(214, 167, 36) solid 4px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+button:hover{
+    background-color: rgb(245, 218, 143);
+}
+
+button:active{
+    background-color: rgb(214, 167, 36);
+    color: white;
+}
+
+@media screen and (max-width: 1265px){
+    #wrapper{
+        width: 80%;
+        margin:0 auto 0 auto;
+    }
+    #quoteArea {
+        display: block;
+        margin: 2em auto 0 auto;
+        width: 500px;
+        background-size: cover;
+    }
+    #quoteArea h2 {
+        clear:both;
+    }
+    #quoteArea p {
+        margin: 450px 50px 0 0;
+        height: 200px;
+        width: 400px;
+    }
+    button{
+        float:none;
+        clear:both;
+        display: block;
+        margin:0 auto 0 auto;
+    }
+    footer{
+        display: block;
+        clear: both;
+        margin: 350px auto -50px auto;
+        text-align: center;
+
+    }
+    #quoteArea h2 {
+        float: none;
+        margin: 100px 100px 0 50px;
+        padding-top: 10px;
+        font-size: 18pt;
+        width: 200px
+    }
+}
