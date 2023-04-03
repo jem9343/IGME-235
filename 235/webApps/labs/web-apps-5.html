@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Web Apps-5</title>
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+
+		#colorform {
+			background-color: #dfecdf;
+			color: #111;
+			padding: 1em;
+			width: 400px;
+		}
+
+		#colorform p#info {
+			background-color: white;
+			color: black;
+			width: 300px;
+			height: 100px;
+			padding: .5em;
+		}
+
+		#colorform legend {
+			font-weight: bold;
+			font-size: 1.2em;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="colorform">
+		<legend>Choose your favorite color!</legend>
+		<p><input type="radio" name="colorGroup" id="colorGroupRed" value="red" /> Red</p>
+		<p><input type="radio" name="colorGroup" id="colorGroupGreen" value="green" /> Green</p>
+		<p><input type="radio" name="colorGroup" id="colorGroupBlue" value="blue" /> Blue</p>
+		<p><button id="colorButton" type="button">Submit</button></p>
+		<p id="info"></p>
+	</div>
+
+	<script>
+		/* Write your code here! */
+		"use strict"
+
+
+		let info = document.querySelector("#info");
+		let buttons = document.querySelectorAll("input[type=radio]")
+		let red = document.querySelector("#colorGroupRed");
+		let blue = document.querySelector("#colorGroupBlue");
+		let green = document.querySelector("#colorGroupGreen");
+		let legend = document.querySelector("legend");
+
+		function submitClicked() {
+			if (red.checked) {
+				legend.style.color = "red";
+				info.innerHTML = "Your FINAL CHOICE is red!"
+			}
+			if (blue.checked) {
+				legend.style.color = "blue";
+				info.innerHTML = "Your FINAL CHOICE is blue!";
+			}
+			if (green.checked) {
+				legend.style.color = "green";
+				info.innerHTML = "Your FINAL CHOICE is green!";
+			}
+		}
+
+		function addText(e) {
+			let state = e.target.value;
+			for (let element of buttons) {
+				if (state == "red") {
+					console.log("red");
+					info.innerHTML = "You selected RED!"
+				}
+				if (state == "blue") {
+					console.log("blue");
+					info.innerHTML = "You selected BLUE!"
+				}
+				if (state == "green") {
+					console.log("green");
+					info.innerHTML = "You selected GREEN!"
+				}
+
+			}
+		}
+
+		// I know there was probably a more efficient way to do this, but I can't figure it out.
+
+		red.addEventListener("change", addText);
+		blue.addEventListener("change", addText);
+		green.addEventListener("change", addText);
+
+		document.querySelector("#colorButton").addEventListener("click", submitClicked);
+
+	</script>
+</body>
+
+</html>
