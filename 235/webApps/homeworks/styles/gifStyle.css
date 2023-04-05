@@ -18,19 +18,23 @@ header h1 {
 #status {
     font-style: italic;
     text-align: center;
+    margin: 20px;
 }
 
 h2 {
     text-align: center;
     margin: 30px;
 }
-
 #content {
     width: 90%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 50px 10px;
+}
+#content p{
+    text-align: center;
+    margin: 30px;
 }
 
 #topWrapper {
