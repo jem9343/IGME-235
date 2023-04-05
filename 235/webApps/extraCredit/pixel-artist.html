@@ -125,6 +125,29 @@ function fillCell(e){
     console.log(`${col}, ${row}`);
 }
 
+let mouseIsDown = false;
+
+container.onmousemove= (e) => {
+	e.preventDefault();
+	if (mouseIsDown) fillCell(e);
+}
+
+container.onmousedown = (e) =>
+{
+	e.preventDefault();
+	mouseIsDown = true;
+}
+
+window.onmouseup = (e) =>
+{
+	e.preventDefault();
+	mouseIsDown = false;
+}
+
+document.querySelector("#colorChooser").onchange = (e) =>
+{
+	color = e.target.value;
+}
 </script>
 </body>
 </html>
