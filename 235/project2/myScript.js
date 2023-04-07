@@ -1,0 +1,161 @@
+"use strict";
+        window.onload = init;
+
+        function init() {
+            document.querySelector("#search").onclick = getData;
+        }
+
+        let nsfw = false;
+        let term = ""; // we declared `term` out here because we will need it later
+
+        function checkNSFW() {
+            document.getElementById("nsfw").addEventListener("change", function () {
+                if (this.checked) {
+                    console.log("Checkbox is checked..");
+                    nsfw = true;
+                    return true;
+                } else {
+                    console.log("Checkbox is not checked..");
+                    nsfw = false;
+                    return false;
+                }
+            })
+        }
+
+        function getData() {
+            // 1 - main entry point to web service
+            const SERVICE_URL = "https://api.jikan.moe/v4/manga?q=";
+
+            // No API Key required!
+
+            // 2 - build up our URL string
+            let url = SERVICE_URL;
+
+            // 3 - parse the user entered term we wish to search
+            term = document.querySelector("#searchterm").value;
+
+            // get rid of any leading and trailing spaces
+            term = term.trim();
+            // encode spaces and special characters
+            term = encodeURIComponent(term);
+
+            // if there's no term to search then bail out of the function (return does this)
+            if (term.length < 1) {
+                document.querySelector("#debug").innerHTML = "<b>Enter a search term first!</b>";
+                return;
+            }
+            if (term.length <= 2) {
+                document.querySelector("#debug").innerHTML = "<b>Please enter at least three letters!</b>";
+                return;
+            }
+            url += term;
+
+            // 4 - update the UI
+            document.querySelector("#debug").innerHTML = `<b>Querying web service with:</b> <a href="${url}" target="_blank">${url}</a>`;
+
+            // 5 - create a new XHR object
+            let xhr = new XMLHttpRequest();
+
+            // 6 - set the onload handler
+            xhr.onload = dataLoaded;
+
+            // 7 - set the onerror handler
+            xhr.onerror = dataError;
+
+            // 8 - open connection and send the request
+            xhr.open("GET", url);
+            xhr.send();
+        }
+
+        function dataError(e) {
+            console.log("An error occurred");
+        }
+
+        function dataLoaded(e) {
+            // 1 - e.target is the xhr object
+            let xhr = e.target;
+
+            // 2 - xhr.responseText is the JSON file we just downloaded
+            console.log(xhr.responseText);
+
+            // 3 - turn the text into a parsable JavaScript object
+            let obj = JSON.parse(xhr.responseText);
+
+            // 4 - if there are no results, print a message and return
+            if (obj.error) {
+                let msg = obj.error;
+                document.querySelector("#content").innerHTML = `<p><i>Problem! <b>${msg}</b></i></p>`;
+                return; // Bail out
+            }
+
+            // 5 - if there is an array of results, loop through them
+            // this is a weird API, the name of the key is the day of the week you asked for
+            let results = obj.data;
+            if (!results) {
+                document.querySelector("#content").innerHTML = `<p><i>Problem! <b>No results for "${term}"</b></i></p>`;
+                return;
+            }
+
+            // 6 - put together HTML
+            let bigString = ""; // ES6 String Templating
+
+            // Check the options
+
+            let showNSFW = checkNSFW();
+
+            for (let i = 0; i < results.length; i++) {
+                let result = results[i];
+                let url = result.url;
+                let title = result.title;
+                let image = result.images.jpg.image_url;
+                //     let div = document.createElement("div");
+                //     let img = document.createElement("img");
+                //     div.appendChild(img);
+
+                let score;
+                let author = result.authors;
+                let imageLine = `<a href=${url} target='_blank'><img src='${image}' title= '${title}'/></a>`;
+
+                if (showNSFW == false) {
+                    if (result.sfw == true) {
+                        return;
+                    }
+                }
+
+                if (author.length >= 1) {
+                    let line = `<div class='result'><a href='${url}'>${title}</a>`;
+                    line += imageLine;
+                    let writtenBy = `<hr><h3>Created by:</h3>`;
+                    line += writtenBy;
+                    for (let i = 0; i < author.length; i++) {
+                        let anotherAuthor = author[i].name;
+                        let newAuthorLine = `<p>- ${anotherAuthor}</p>`
+                        line += newAuthorLine;
+                    }
+                    bigString += line;
+                }
+                else {
+                    let line = `<div class='result'><a href='${url}'>${title}</a>`;
+                    line += imageLine;
+                    let writtenBy = `<h3>Author Not Listed</h3>`;
+                    line += writtenBy;
+                    bigString += line;
+                }
+
+                if (result.score == null)
+                {
+                    score = `<h3>Score: No Rating Yet</h3>`;
+                }
+                else{
+                    score = `<h3>Score: ${result.score}</h3>`;
+                }
+                
+                bigString += score;
+                let endcap = `</div>`;
+                bigString += endcap;
+            }
+
+            // 7 - display final results to user
+            document.querySelector("#content").innerHTML = bigString;
+            document.querySelector("#status").innerHTML = `<p><i>Here are <b>${results.length}</b> results!</i></p>`;
+        }
