@@ -1,0 +1,33 @@
+body{
+    width: 90%;
+    margin: 40px auto;
+}
+
+#wrapper{
+    display: grid;
+    grid: 200px 1fr 1fr / 1fr 1fr 1fr;
+    align-items: center;
+}
+header{
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    border: 1px solid black;
+    padding: 0 20px;
+}
+#searchTools
+{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#results{
+    grid-column: 2 / span 3;
+    grid-row: 2 / span 3;
+    padding: 0 20px;
+}
+#content
+{
+    display:grid;
+    grid: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    justify-content: space-evenly;
+}
