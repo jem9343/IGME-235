@@ -10,22 +10,21 @@
 
 <body>
     <div id="wrapper">
-            <header>
-                <h1>Manga Database Tool</h1>
-            </header>
+        <header>
+            <h1>Manga Database Tool</h1>
+            <div id="title"><h2>Search By Title</h2><input id="searchterm" type="text" size="60" maxlength="20"/></div>
+            <button type="button" id="search" class="green">Search Database</button>
+        </header>
+        <hr>
         <div id="searchTools">
-            <p>Search Term &gt; <input id="searchterm" type="text" size="20" maxlength="20" autofocus value="monday" />
-            </p>
-            <hr>
-
+                <p id="debug"></p>
             <h2>TOOLS</h2>
 
             <input type="checkbox" id="nsfw" name="nsfw" value="nsfw">
             <label for="nsfw"> Include NSFW entries?</label><br>
 
             <!-- <p id="debug"></p> -->
-            
-            
+
             <select name="currentStatus" id="currentStatus">
                 <option value="any">Status</option>
                 <option value="publishing">Currently Publishing</option>
@@ -52,11 +51,10 @@
                     Manhwa<br>
                     <input type="checkbox" name="type" value="manhua" onclick="return ValidatePetSelection();">Search
                     Manhua<br>
-                    <br>
                 </fieldset>
             </form>
 
-            <p><button type="button" id="search" class="green">Search Database</button></p>
+            
         </div>
         <div id="results">
             <h2>Results</h2>

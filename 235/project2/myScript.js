@@ -33,6 +33,11 @@
 
             // 3 - parse the user entered term we wish to search
             term = document.querySelector("#searchterm").value;
+            if (term == null)
+            {
+                document.querySelector("#debug").innerHTML = "<b>Enter a search term first!</b>";
+                return;
+            }
 
             // get rid of any leading and trailing spaces
             term = term.trim();
@@ -40,10 +45,6 @@
             term = encodeURIComponent(term);
 
             // if there's no term to search then bail out of the function (return does this)
-            if (term.length < 1) {
-                document.querySelector("#debug").innerHTML = "<b>Enter a search term first!</b>";
-                return;
-            }
             if (term.length <= 2) {
                 document.querySelector("#debug").innerHTML = "<b>Please enter at least three letters!</b>";
                 return;
@@ -122,7 +123,7 @@
                     }
                 }
 
-                if (author.length >= 1) {
+                if (author.length >= 1 && author.length < 4) {
                     let line = `<div class='result'><a href='${url}'>${title}</a>`;
                     line += imageLine;
                     let writtenBy = `<hr><h3>Created by:</h3>`;
@@ -132,6 +133,21 @@
                         let newAuthorLine = `<p>- ${anotherAuthor}</p>`
                         line += newAuthorLine;
                     }
+                    bigString += line;
+                }
+                else if (author.length >= 4)
+                {
+                    let line = `<div class='result'><a href='${url}'>${title}</a>`;
+                    line += imageLine;
+                    let writtenBy = `<hr><h3>Created by:</h3>`;
+                    line += writtenBy;
+                    for (let i = 0; i < 4; i++) {
+                        let anotherAuthor = author[i].name;
+                        let newAuthorLine = `<p>- ${anotherAuthor}</p>`
+                        line += newAuthorLine;
+                    }
+                    let plusMore = `<p>Et. Al</p>`
+                    line += plusMore;
                     bigString += line;
                 }
                 else {
