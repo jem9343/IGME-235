@@ -12,49 +12,58 @@
     <div id="wrapper">
         <header>
             <h1>Manga Database Tool</h1>
-            <div id="title"><h2>Search By Title</h2><input id="searchterm" type="text" size="60" maxlength="20"/></div>
-            <button type="button" id="search" class="green">Search Database</button>
+            <div id="title">
+                <h2>Search By Title</h2><input id="searchterm" type="text" size="60" maxlength="20" />
+            </div>
+            <button type="button" id="searchbutton">Search Database</button>
         </header>
         <hr>
         <div id="searchTools">
-                <p id="debug"></p>
+            <p id="debug"></p>
             <h2>TOOLS</h2>
-
-            <input type="checkbox" id="nsfw" name="nsfw" value="nsfw">
-            <label for="nsfw"> Include NSFW entries?</label><br>
+            <form method="post" action="/Tests/Post">
+                <fieldset>
+                    <legend>NSFW</legend>
+                    <input type="checkbox" id="nsfw" name="nsfw" value="nsfw">
+                    <label for="nsfw"> Include NSFW entries?</label><br>
+                </fieldset>
+            </form>
 
             <!-- <p id="debug"></p> -->
-
-            <select name="currentStatus" id="currentStatus">
-                <option value="any">Status</option>
-                <option value="publishing">Currently Publishing</option>
-                <option value="complete">Complete</option>
-                <option value="hiatus">On Hiatus</option>
-                <option value="discontinued">Discontinued</option>
-                <option value="upcoming">New and Upcoming</option>
-            </select>
+            <form method="post" action="/Tests/Post">
+                <fieldset>
+                    <legend>Filter by Status</legend>
+                    <select name="currentStatus" id="currentStatus">
+                        <option value="any">Status</option>
+                        <option value="publishing">Currently Publishing</option>
+                        <option value="complete">Complete</option>
+                        <option value="hiatus">On Hiatus</option>
+                        <option value="discontinued">Discontinued</option>
+                        <option value="upcoming">New and Upcoming</option>
+                    </select>
+                </fieldset>
+            </form>
 
             <form method="post" action="/Tests/Post">
                 <fieldset>
                     <legend>Filter by Type</legend>
-                    <input type="checkbox" name="type" value="manga" onclick="return ValidatePetSelection();">Search
+                    <input type="checkbox" name="type" value="manga" onclick="return true;">Search
                     Manga<br>
-                    <input type="checkbox" name="type" value="novel" onclick="return ValidatePetSelection();">Search
+                    <input type="checkbox" name="type" value="novel" onclick="return true;">Search
                     Novels<br>
-                    <input type="checkbox" name="type" value="lightnovel"
-                        onclick="return ValidatePetSelection();">Search Light Novels<br>
-                    <input type="checkbox" name="type" value="oneshot" onclick="return ValidatePetSelection();">Search
+                    <input type="checkbox" name="type" value="lightnovel" onclick="return true;">Search Light Novels<br>
+                    <input type="checkbox" name="type" value="oneshot" onclick="return true;">Search
                     Oneshots<br>
-                    <input type="checkbox" name="type" value="doujin" onclick="return ValidatePetSelection();">Search
+                    <input type="checkbox" name="type" value="doujin" onclick="return true;">Search
                     Doujin<br>
-                    <input type="checkbox" name="type" value="manhwa" onclick="return ValidatePetSelection();">Search
+                    <input type="checkbox" name="type" value="manhwa" onclick="return true;">Search
                     Manhwa<br>
-                    <input type="checkbox" name="type" value="manhua" onclick="return ValidatePetSelection();">Search
+                    <input type="checkbox" name="type" value="manhua" onclick="return true;">Search
                     Manhua<br>
                 </fieldset>
             </form>
+            <button type="button" class="search" id="filterbutton">Apply Filters</button>
 
-            
         </div>
         <div id="results">
             <h2>Results</h2>
