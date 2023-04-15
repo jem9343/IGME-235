@@ -31,6 +31,7 @@ let score = 0;
 let life = 100;
 let levelNum = 1;
 let paused = true;
+let gameOverScoreLevel;
 
 function setup() {
     stage = app.stage;
@@ -179,6 +180,19 @@ function createLabelsAndButtons() {
     playAgainButton.on('pointerout', e => e.currentTarget.alpha = 1.0); // ditto
     gameOverScene.addChild(playAgainButton);
 
+    gameOverScoreLevel = 0;
+    let gameOverFinalScore = new PIXI.Text("Your Final Score: " + gameOverScoreLevel);
+    textStyle = new PIXI.TextStyle({
+        fill: 0xFFFFFF,
+        fontSize: 40,
+        fontFamily: "Futura",
+        stroke: 0xFF0000,
+        strokeThickness: 6
+    });
+    gameOverFinalScore.style = textStyle;
+    gameOverFinalScore.x = 125;
+    gameOverFinalScore.y = sceneHeight / 2 + 100;
+    gameOverScene.addChild(gameOverFinalScore);
 }
 
 function startGame() {
@@ -327,6 +341,8 @@ function end() {
     explosions.forEach(e => gameScene.removeChild(e));
     explosions = [];
 
+    gameOverScoreLevel = score;
+
     gameOverScene.visible = true;
     gameScene.visible = false;
 
@@ -335,10 +351,24 @@ function end() {
 function fireBullet(e) {
     if (paused) return;
 
-    let b = new Bullet(0xFFFFFF, ship.x, ship.y);
-    bullets.push(b);
-    gameScene.addChild(b);
-    shootSound.play();
+    if (levelNum > 1) {
+        let b1 = new Bullet(0xFFFFFF, ship.x - 10, ship.y);
+        let b2 = new Bullet(0xFFFFFF, ship.x, ship.y);
+        let b3 = new Bullet(0xFFFFFF, ship.x + 15, ship.y);
+        bullets.push(b1);
+        bullets.push(b2);
+        bullets.push(b3);
+        gameScene.addChild(b1);
+        gameScene.addChild(b2);
+        gameScene.addChild(b3);
+        shootSound.play();
+    }
+    else {
+        let b = new Bullet(0xFFFFFF, ship.x, ship.y);
+        bullets.push(b);
+        gameScene.addChild(b);
+        shootSound.play();
+    }
 }
 
 
@@ -355,8 +385,7 @@ function loadSpriteSheet() {
     return textures;
 }
 
-function createExplosion(x,y,frameWidth, frameHeight)
-{
+function createExplosion(x, y, frameWidth, frameHeight) {
     let w2 = frameWidth / 2;
     let h2 = frameHeight / 2;
     let expl = new PIXI.AnimatedSprite(explosionTextures);
