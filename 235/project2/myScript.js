@@ -123,7 +123,7 @@ function dataLoaded(e) {
             let imageLine = `<a href=${url} target='_blank'><img src='${image}' title= '${title}'/></a>`;
 
             if (author.length >= 1 && author.length < 4) {
-                let line = `<div class='result'><a href='${url}' class='titleOfManga'>${title}</a>`;
+                let line = `<div class='result'><a href='${url}' target='_blank' class='titleOfManga'>${title}</a>`;
                 line += imageLine;
                 let writtenBy = `<hr><h3>Created by:</h3>`;
                 line += writtenBy;
@@ -135,7 +135,7 @@ function dataLoaded(e) {
                 bigString += line;
             }
             else if (author.length >= 4) {
-                let line = `<div class='result'><a href='${url}' class='titleOfManga'>${title}</a>`;
+                let line = `<div class='result'><a href='${url}' target='_blank' class='titleOfManga'>${title}</a>`;
                 line += imageLine;
                 let writtenBy = `<hr><h3>Created by:</h3>`;
                 line += writtenBy;
@@ -149,7 +149,7 @@ function dataLoaded(e) {
                 bigString += line;
             }
             else {
-                let line = `<div class='result'><a href='${url}' class='titleOfManga'>${title}</a>`;
+                let line = `<div class='result'><a href='${url}' target='_blank' class='titleOfManga'>${title}</a>`;
                 line += imageLine;
                 let writtenBy = `<h3>Author Not Listed</h3>`;
                 line += writtenBy;
