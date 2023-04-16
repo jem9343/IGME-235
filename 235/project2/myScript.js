@@ -4,11 +4,13 @@ window.onload = init;
 function init() {
     document.querySelector("#searchbutton").onclick = getData;
     document.querySelector("#filterbutton").onclick = getData;
+    // Get the input field
 }
 
 let nsfw = false;
 let term = ""; // we declared `term` out here because we will need it later
 
+// Execute a function when the user presses a key on the keyboard
 
 function getData() {
     // 1 - main entry point to web service
@@ -90,85 +92,180 @@ function dataLoaded(e) {
     // Check the options
 
     let resultLengthToShow = 0;
-    let showManga = false;
-    let showNovels = false;
-    let showLightNovels = false;
-    let showOneShot = false;
-    let showDoujin = false;
-    let showManhwa = false;
-    let showManhua = false;
+    
 
+    let checkBoxes = $('[name="type"]');
+    let currentlySelectedGenres = [];
+    foreach (checkbox in checkBoxes)
+    {
+        if (checkbox.checked == true)
+        {
+            currentlySelectedGenres.push(checkbox.innerHTML);
+        }
+    }
+    
+    let showNovels = document.getElementById("novels").checked;
+    let showLightNovels = document.getElementById("lightnovels").checked;
+    let showOneShot = document.getElementById("oneshot").checked;
+    let showDoujin = document.getElementById("doujin").checked;
+    let showManhwa = document.getElementById("manhwa").checked;
+    let showManhua = document.getElementById("manhua").checked;
+    let showManga = document.getElementById("manga").checked;
+    let status = document.querySelector("#currentStatus")[document.querySelector("#currentStatus").selectedIndex].innerHTML;
 
-    for (let i = 0; i < results.length; i++) {
-        let result = results[i];
-        let url = result.url;
-        let title = result.title;
-        let image = result.images.jpg.image_url;
-        let ratingOfResult = result.genres;
-        let isInappropriate = false;
+    if (status == "Status") {
+        for (let i = 0; i < results.length; i++) {
+            let result = results[i];
+            let url = result.url;
+            let title = result.title;
+            let image = result.images.jpg.image_url;
+            let ratingOfResult = result.genres;
+            let isInappropriate = false;
 
-        for (let i = 0; i < ratingOfResult.length; i++) {
-            if ((ratingOfResult[i].name == "Hentai" ||
-                ratingOfResult[i].name == "Erotica" ||
-                ratingOfResult[i].name == "Ecchi")
-                && document.querySelector("#nsfw").checked == false) {
+            for (let i = 0; i < ratingOfResult.length; i++) {
+                if ((ratingOfResult[i].name == "Hentai" ||
+                    ratingOfResult[i].name == "Erotica" ||
+                    ratingOfResult[i].name == "Ecchi")
+                    && document.querySelector("#nsfw").checked == false) {
+                    isInappropriate = true;
+                }
+            }
+            if (isInappropriate != true) {
+
+                resultLengthToShow += 1;
+                //  isInappropriate = false;
+                let score;
+                let author = result.authors;
+                let imageLine = `<a href=${url} target='_blank'><img src='${image}' title= '${title}'/></a>`;
+
+                if (author.length >= 1 && author.length < 4) {
+                    let line = `<div class='result'><a href='${url}' target='_blank' class='titleOfManga'>${title}</a>`;
+                    line += imageLine;
+                    let writtenBy = `<hr><h3>Created by:</h3>`;
+                    line += writtenBy;
+                    for (let i = 0; i < author.length; i++) {
+                        let anotherAuthor = author[i].name;
+                        let newAuthorLine = `<p>- ${anotherAuthor}</p>`
+                        line += newAuthorLine;
+                    }
+                    bigString += line;
+                }
+                else if (author.length >= 4) {
+                    let line = `<div class='result'><a href='${url}' target='_blank' class='titleOfManga'>${title}</a>`;
+                    line += imageLine;
+                    let writtenBy = `<hr><h3>Created by:</h3>`;
+                    line += writtenBy;
+                    for (let i = 0; i < 4; i++) {
+                        let anotherAuthor = author[i].name;
+                        let newAuthorLine = `<p>- ${anotherAuthor}</p>`
+                        line += newAuthorLine;
+                    }
+                    let plusMore = `<p>Et. Al</p>`
+                    line += plusMore;
+                    bigString += line;
+                }
+                else {
+                    let line = `<div class='result'><a href='${url}' target='_blank' class='titleOfManga'>${title}</a>`;
+                    line += imageLine;
+                    let writtenBy = `<h3>Author Not Listed</h3>`;
+                    line += writtenBy;
+                    bigString += line;
+                }
+
+                if (result.score == null) {
+                    score = `<h3>Score: No Rating Yet</h3>`;
+                }
+                else {
+                    score = `<h3>Score: ${result.score}</h3>`;
+                }
+
+                bigString += score;
+                let endcap = `</div>`;
+                bigString += endcap;
+            }
+            // 7 - display final results to user
+            document.querySelector("#content").innerHTML = bigString;
+            document.querySelector("#status").innerHTML = `<p><i>Here are <b>${resultLengthToShow}</b> results!</i></p>`;
+        }
+    }
+    else {
+        for (let i = 0; i < results.length; i++) {
+            let result = results[i];
+            let url = result.url;
+            let title = result.title;
+            let image = result.images.jpg.image_url;
+            let ratingOfResult = result.genres;
+            let isInappropriate = false;
+            let statusResult = result.status;
+
+            for (let i = 0; i < ratingOfResult.length; i++) {
+                if ((ratingOfResult[i].name == "Hentai" ||
+                    ratingOfResult[i].name == "Erotica" ||
+                    ratingOfResult[i].name == "Ecchi")
+                    && document.querySelector("#nsfw").checked == false) {
+                    isInappropriate = true;
+                }
+            }
+            if (statusResult != status) {
                 isInappropriate = true;
             }
-        }
-        if (isInappropriate != true) {
-            resultLengthToShow += 1;
-            //  isInappropriate = false;
-            let score;
-            let author = result.authors;
-            let imageLine = `<a href=${url} target='_blank'><img src='${image}' title= '${title}'/></a>`;
 
-            if (author.length >= 1 && author.length < 4) {
-                let line = `<div class='result'><a href='${url}' target='_blank' class='titleOfManga'>${title}</a>`;
-                line += imageLine;
-                let writtenBy = `<hr><h3>Created by:</h3>`;
-                line += writtenBy;
-                for (let i = 0; i < author.length; i++) {
-                    let anotherAuthor = author[i].name;
-                    let newAuthorLine = `<p>- ${anotherAuthor}</p>`
-                    line += newAuthorLine;
+            if (isInappropriate != true) {
+                resultLengthToShow += 1;
+                //  isInappropriate = false;
+                let score;
+                let author = result.authors;
+                let imageLine = `<a href=${url} target='_blank'><img src='${image}' title= '${title}'/></a>`;
+
+                if (author.length >= 1 && author.length < 4) {
+                    let line = `<div class='result'><a href='${url}' target='_blank' class='titleOfManga'>${title}</a>`;
+                    line += imageLine;
+                    let writtenBy = `<hr><h3>Created by:</h3>`;
+                    line += writtenBy;
+                    for (let i = 0; i < author.length; i++) {
+                        let anotherAuthor = author[i].name;
+                        let newAuthorLine = `<p>- ${anotherAuthor}</p>`
+                        line += newAuthorLine;
+                    }
+                    bigString += line;
                 }
-                bigString += line;
-            }
-            else if (author.length >= 4) {
-                let line = `<div class='result'><a href='${url}' target='_blank' class='titleOfManga'>${title}</a>`;
-                line += imageLine;
-                let writtenBy = `<hr><h3>Created by:</h3>`;
-                line += writtenBy;
-                for (let i = 0; i < 4; i++) {
-                    let anotherAuthor = author[i].name;
-                    let newAuthorLine = `<p>- ${anotherAuthor}</p>`
-                    line += newAuthorLine;
+                else if (author.length >= 4) {
+                    let line = `<div class='result'><a href='${url}' target='_blank' class='titleOfManga'>${title}</a>`;
+                    line += imageLine;
+                    let writtenBy = `<hr><h3>Created by:</h3>`;
+                    line += writtenBy;
+                    for (let i = 0; i < 4; i++) {
+                        let anotherAuthor = author[i].name;
+                        let newAuthorLine = `<p>- ${anotherAuthor}</p>`
+                        line += newAuthorLine;
+                    }
+                    let plusMore = `<p>Et. Al</p>`
+                    line += plusMore;
+                    bigString += line;
                 }
-                let plusMore = `<p>Et. Al</p>`
-                line += plusMore;
-                bigString += line;
-            }
-            else {
-                let line = `<div class='result'><a href='${url}' target='_blank' class='titleOfManga'>${title}</a>`;
-                line += imageLine;
-                let writtenBy = `<h3>Author Not Listed</h3>`;
-                line += writtenBy;
-                bigString += line;
-            }
+                else {
+                    let line = `<div class='result'><a href='${url}' target='_blank' class='titleOfManga'>${title}</a>`;
+                    line += imageLine;
+                    let writtenBy = `<h3>Author Not Listed</h3>`;
+                    line += writtenBy;
+                    bigString += line;
+                }
 
-            if (result.score == null) {
-                score = `<h3>Score: No Rating Yet</h3>`;
-            }
-            else {
-                score = `<h3>Score: ${result.score}</h3>`;
-            }
+                if (result.score == null) {
+                    score = `<h3>Score: No Rating Yet</h3>`;
+                }
+                else {
+                    score = `<h3>Score: ${result.score}</h3>`;
+                }
 
-            bigString += score;
-            let endcap = `</div>`;
-            bigString += endcap;
+                bigString += score;
+                let endcap = `</div>`;
+                bigString += endcap;
+            }
+            // 7 - display final results to user
+            document.querySelector("#content").innerHTML = bigString;
+            document.querySelector("#status").innerHTML = `<p><i>Here are <b>${resultLengthToShow}</b> results!</i></p>`;
         }
-        // 7 - display final results to user
-        document.querySelector("#content").innerHTML = bigString;
-        document.querySelector("#status").innerHTML = `<p><i>Here are <b>${resultLengthToShow}</b> results!</i></p>`;
     }
+
 }

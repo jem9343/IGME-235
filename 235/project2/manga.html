@@ -35,8 +35,8 @@
                     <legend>Filter by Status</legend>
                     <select name="currentStatus" id="currentStatus">
                         <option value="any">Status</option>
-                        <option value="publishing">Currently Publishing</option>
-                        <option value="complete">Complete</option>
+                        <option value="publishing">Publishing</option>
+                        <option value="complete">Finished</option>
                         <option value="hiatus">On Hiatus</option>
                         <option value="discontinued">Discontinued</option>
                         <option value="upcoming">New and Upcoming</option>
@@ -47,18 +47,18 @@
             <form method="post" action="/Tests/Post">
                 <fieldset>
                     <legend>Filter by Type</legend>
-                    <input type="checkbox" name="type" value="manga" onclick="return true;">Search
+                    <input type="checkbox" id="manga" value="manga">Search
                     Manga<br>
-                    <input type="checkbox" name="type" value="novel" onclick="return true;">Search
+                    <input type="checkbox" id="novel" value="novel">Search
                     Novels<br>
-                    <input type="checkbox" name="type" value="lightnovel" onclick="return true;">Search Light Novels<br>
-                    <input type="checkbox" name="type" value="oneshot" onclick="return true;">Search
+                    <input type="checkbox" id="lightnovel" value="lightnovel">Search Light Novels<br>
+                    <input type="checkbox" id="oneshot" value="oneshot">Search
                     Oneshots<br>
-                    <input type="checkbox" name="type" value="doujin" onclick="return true;">Search
+                    <input type="checkbox" id="doujin" value="doujin">Search
                     Doujin<br>
-                    <input type="checkbox" name="type" value="manhwa" onclick="return true;">Search
+                    <input type="checkbox" id="manhwa" value="manhwa">Search
                     Manhwa<br>
-                    <input type="checkbox" name="type" value="manhua" onclick="return true;">Search
+                    <input type="checkbox" id="manhua" value="manhua">Search
                     Manhua<br>
                 </fieldset>
             </form>
