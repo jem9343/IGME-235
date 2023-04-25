@@ -12,8 +12,27 @@ function init() {
         }
     });
 
+    /* This stuff happens "onload" */
+    // declare some constants
+    const searchField = document.querySelector("#searchterm");
+    const prefix = "jem9343-"; // change 'abc1234' to your banjo id
+    const titleKey = prefix + "title";
+
+    // grab the stored data, will return `null` if the user has never been to this page
+    const storedTitle = localStorage.getItem(titleKey);
+
+    // if we find a previously set name value, display it
+    if (storedTitle) {
+        searchField.value = storedTitle;
+    } else {
+        searchField.value = "Jojo"; // a default value if `nameField` is not found
+    }
+
 }
 
+const prefix = "jem9343-"; // change 'abc1234' to your banjo id
+const titleKey = prefix + "title";
+const searchField = document.querySelector("#searchterm");
 let nsfw = false;
 let term = ""; // we declared `term` out here because we will need it later
 
@@ -39,6 +58,8 @@ function getData() {
     term = term.trim();
     // encode spaces and special characters
     term = encodeURIComponent(term);
+
+    localStorage.setItem(titleKey, term);
 
     // if there's no term to search then bail out of the function (return does this)
     if (term.length <= 2) {
@@ -117,26 +138,19 @@ function dataLoaded(e) {
     // }
 
     for (let i = 0; i < checkBoxes.length; i++) {
-        if (checkBoxes[i].tagName == "INPUT") {
-            if (checkBoxes[i].type == "checkbox") {
-                console.log("this is CheckBox.")
-                if (checkBoxes[i].checked == true) {
-                    currentlySelectedGenres.push(checkBoxes[i].value);
-                    console.log("True");
-                }
-            }
+        if (checkBoxes[i].tagName == "INPUT" && checkBoxes[i].type == "checkbox" && checkBoxes[i].checked == true && checkBoxes[i].value != "nsfw") {
+            currentlySelectedGenres.push(checkBoxes[i].value);
+            console.log("True");
         }
     }
 
-    let showNovels = document.getElementById("novel").checked;
-    let showLightNovels = document.getElementById("lightnovel").checked;
-    let showOneShot = document.getElementById("oneshot").checked;
-    let showDoujin = document.getElementById("doujin").checked;
-    let showManhwa = document.getElementById("manhwa").checked;
-    let showManhua = document.getElementById("manhua").checked;
-    let showManga = document.getElementById("manga").checked;
-    // let status = document.querySelector("status").options[document.querySelector("status").selectedIndex].innerHTML;
-
+    let status = document.getElementById("status");
+    let statusText = status.options[status.selectedIndex].innerHTML;
+    let showAll = false;
+    if (statusText == "Status")
+    {
+        showAll = true;
+    }
 
     for (let i = 0; i < results.length; i++) {
         let result = results[i];
@@ -148,27 +162,25 @@ function dataLoaded(e) {
         let isCorrectGenre = false;
 
         for (let i = 0; i < ratingOfResult.length; i++) {
-            if (currentlySelectedGenres.length == 0) {
+            if (currentlySelectedGenres.length == 0 && showAll == true) {
                 isCorrectGenre = true;
             }
             else {
-
                 for (let j = 0; j < currentlySelectedGenres.length; j++) {
-                    if (j != 0 && j != 1 && result.type == currentlySelectedGenres[i]) {
+                    if (result.type == currentlySelectedGenres[i]) {
                         isCorrectGenre = true;
-                        break;
                     }
                 }
             }
 
             if ((ratingOfResult[i].name == "Hentai" ||
-                ratingOfResult[i].name == "Erotica" ||
-                ratingOfResult[i].name == "Ecchi")
-                && document.querySelector("#nsfw").checked == false) {
-                isInappropriate = true;
-            }
+            ratingOfResult[i].name == "Erotica" ||
+            ratingOfResult[i].name == "Ecchi")
+            && document.querySelector("#nsfw").checked == false) {
+            isInappropriate = true;
         }
-        if ((isInappropriate != true && isCorrectGenre == true) || (isInappropriate != true && currentlySelectedGenres.length == 0)) {
+        }
+        if ((isInappropriate != true && isCorrectGenre == true)) {
 
             resultLengthToShow += 1;
             //  isInappropriate = false;
@@ -223,7 +235,7 @@ function dataLoaded(e) {
         }
         // 7 - display final results to user
         document.querySelector("#content").innerHTML = bigString;
-        document.querySelector("#status").innerHTML = `<p><i>Here are <b>${resultLengthToShow}</b> results!</i></p>`;
+        document.querySelector("#resultStatus").innerHTML = `<p><i>Here are <b>${resultLengthToShow}</b> results!</i></p>`;
     }
 
     //else {
