@@ -103,11 +103,27 @@ button {
 
 .question, .nums {
     display: block;
-    margin: 10px 30px;
+    margin: 10px 10px 10px 30px;
     font-size: 16pt;
 }
 
 #name, #label-name
 {
     font-size: 16pt;
+    margin: 10px 30px;
+}
+
+
+.form-control
+{
+    font-family: Arial, sans-serif;
+}
+
+form{
+    padding-top: 5px;
+}
+
+#welcome1
+{
+    margin: 10px 30px;
 }

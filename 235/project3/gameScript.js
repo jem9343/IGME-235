@@ -3,26 +3,16 @@ window.onload = init;
 
 function init() {
     let contentSection = document.querySelector("#content").innerHTML
-
+      
     let creatureName = "";
     let creatureImage = "";
     let creatureDescription = "";
-    let bigLine1 = `<div class="card">
-    <h2>Welcome!</h2><br><form id="form">
-		<div class="form-control">
-			<label for="name" id="label-name">
-				Name
-			</label>
-
-			<!-- Input Type Text -->
-			<input type="text"
-				id="name"
-				placeholder="Enter your name" />
-		</div>
-
+    let bigLine1 = `<div class="card"><div id="welcome1">
+    <h2>Hello and Welcome!</h2><h2> Before we begin, please indicate how the following statements below best describe you.</h2><hr></div>
+    <form id="form">
 		<div class="form-control">
 			<label class="question">
-				Rate your level of comfort of safely interacting with the various species of Vita Carnis.<br>(1 - Not at all comfortable, 5 - Completely Comfortable)<br>
+				"I can comfortably and safely interact with the various species of Vita Carnis."<br>(1 - Not at all comfortable, 5 - Completely Comfortable)<br>
 			</label>
 <div class="nums">
 			<!-- Input Type Radio Button -->
@@ -51,7 +41,18 @@ function init() {
 					id="recommed-3"
 					name="recommed">5</input>
 			</label>
-	</form></div></div>`
+
+	</div>
+    <div class="form-control">
+			<label for="name" id="label-name">
+				Please Enter Your Name Below: <br>
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="text"
+				id="name-box"
+				placeholder="Your Name Here" />
+		</div></form></div></div>`
     cardList.push(bigLine1);
 
     for (let i = 0; i < 8; i++) {
@@ -62,9 +63,13 @@ function init() {
     for (let i = 1; i < 7; i++) {
 
         if (i == 1) {
+            var sound = new Howl({
+                src: ["audio/ambience.mp3"]
+            });
             creatureName = "The Crawl";
             creatureImage = "/thecrawl.png";
             creatureDescription = "jlkakjladlk asdfasdf asdfadsf adsf asdfasdfafds"
+            sound.play();
         }
         else if (i == 2) {
             creatureName = "The Trimming";
@@ -73,18 +78,18 @@ function init() {
         }
         else if (i == 3) {
             creatureName = "The Meat Snake";
-            creatureImage = "/thecrawl.png";
+            creatureImage = "/meatsnake.png";
             creatureDescription = "jlkakjladlk asdfasdf asdfadsf adsf asdfasdfafds";
         }
         else if (i == 4) {
             creatureName = "The Mimic";
-            creatureImage = "/thecrawl.png";
+            creatureImage = "/mimic.png";
             creatureDescription = "jlkakjladlk asdfasdf asdfadsf adsf asdfasdfafds";
         }
         else if (i == 5) {
             creatureName = "The Harvester";
             creatureImage = "/thecrawl.png";
-            creatureDescription = "jlkakjladlk asdfasdf asdfadsf adsf asdfasdfafds";
+            //creatureDescription = "jlkakjladlk asdfasdf asdfadsf adsf asdfasdfafds";
         }
         else if (i == 6) {
             creatureName = "The Host of Influence";
@@ -135,9 +140,16 @@ class Card {
 
 function myFunction() {
     cardNumber += 1;
+
+   // if (document.querySelector("#content").innerHTML == cardList[7].innerHTML);
+   // {
+        //document.querySelector("#content").innerHTML = document.getElementById('name-box').value;
+        console.log("run");
+   // }
     //let infoCard = `<p>${cardNumber}</p>`;
     //document.querySelector("#content").innerHTML = infoCard;
     document.querySelector("#content").innerHTML = cardList[cardNumber];
+
     //console.log(infoCard);
 }
 
