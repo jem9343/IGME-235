@@ -9,11 +9,16 @@ h1 {
     font-family: sans-serif;
     border-bottom: 3px solid rgb(60, 17, 17);
     display: block;
-    padding: 0.5em 2em;
+    padding: 20px 1em;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    width: 40%;
+    width: 80%;
+}
+
+h3 {
+    font-size: 16pt;
+    font-family: Arial, sans-serif;
 }
 
 #MainWindow {
@@ -21,21 +26,23 @@ h1 {
     border: 3px solid rgb(60, 17, 17);
     width: 800px;
     margin: 0 auto 0 auto;
-    height: 500px;
+    height: fit-content;
     background-color: #2e2e3a;
 }
 
 #content {
     color: white;
+    margin: 0px 10px;
 }
 
 button {
     width: 150px;
     height: 50px;
     font-family: 'Courier New', Courier, monospace;
-    float: right;
     font-weight: bold;
     font-size: 16pt;
+    display: block;
+    margin: 10px 0px 0px 620px;
 }
 
 .word,
@@ -58,11 +65,11 @@ button {
 
 .wrapper {
     display: grid;
-    grid: 100px 100px 100px 100px/ 260px 260px 260px;
+    grid: repeat(4, 100px)/ repeat(4, 185px);
     align-self: center;
     justify-self: center;
     background-color: #3b3b49;
-    padding:10px;
+    padding: 10px;
 }
 
 .title {
@@ -79,7 +86,7 @@ button {
 
 .description {
     grid-row: 1;
-    grid-column: 3/4;
+    grid-column: 3/5;
 }
 
 .imageOfCreature {
@@ -101,29 +108,114 @@ button {
     margin: 10px;
 }
 
-.question, .nums {
+.question {
     display: block;
-    margin: 10px 10px 10px 30px;
+    margin: 10px 0px 10px 20px;
     font-size: 16pt;
 }
 
-#name, #label-name
-{
+.nums {
+    display: block;
+    margin: 10px 25px 10px 25px;
     font-size: 16pt;
-    margin: 10px 30px;
 }
 
+#name,
+#label-name {
+    font-size: 16pt;
+    margin: 10px 20px;
+}
 
-.form-control
-{
+.form-control {
     font-family: Arial, sans-serif;
 }
 
-form{
+form {
     padding-top: 5px;
 }
 
-#welcome1
+#welcome1 {
+    margin: 10px 20px;
+}
+
+#name-box {
+    margin: 10px 20px;
+    width: 200px;
+    font-size: 14pt;
+}
+
+input {
+    margin: 0px 10px;
+}
+
+#meat {
+    float: left;
+    display: block;
+    width: 150px;
+    clear: both;
+}
+
+h2 {
+    font-size: 20pt;
+    font-family: Arial, sans-serif;
+}
+
+#logo {
+    float: left;
+}
+
+li {
+    font-size: 14pt;
+    font-style: italic;
+}
+
+#stagger {
+    margin-left: 20px;
+    margin-top: -20px;
+}
+
+.appearance {
+    border: 3px solid red;
+    padding: 5px;
+}
+
+.appearance li {
+    font-size: 12pt;
+    font-style: normal;
+}
+
+footer {
+    background-color: #2e2e3a;
+    position: absolute;
+    display: block;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    margin-left: -10px;
+    overflow: hidden;
+    clear: both;
+}
+
+#bottomWords {
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+#bottomRight {
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+#AdditionalButton
 {
-    margin: 10px 30px;
+    display:none;
+    margin-left: 10px;
+    margin-top: -50px;
 }
