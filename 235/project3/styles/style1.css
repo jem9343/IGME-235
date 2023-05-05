@@ -92,14 +92,39 @@ button {
 .imageOfCreature {
     grid-row: 3/4;
     grid-column: 1 / 3;
-    width: 300px;
     justify-self: center;
     align-self: center;
 }
 
+#dropZone {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  min-height: 200px;
+  margin-bottom: 20px;
+  background-color: whitesmoke;
+  border: solid 3px rgb(60, 17, 17);
+}
+
+#dropBox1,
+#dropBox2,
+#dropBox3,
+#dropBox4 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+  border: 1px solid #aaaaaa;
+  padding: 1rem;
+  color: black;
+  font-size: 22pt;
+}
+
 #warning {
     grid-row: 1;
-    grid-column: 1/4;
+    grid-column: 1/ span 4;
     margin: 10px;
     text-align: center;
 }

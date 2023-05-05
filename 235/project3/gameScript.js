@@ -1,6 +1,7 @@
 "use strict";
 window.onload = init;
-
+//https://codepen.io/andreeamaco/pen/qBbLdjY
+//https://codepen.io/Coding_Journey/pen/LYPNmpe
 function init() {
     let contentSection = document.querySelector("#content").innerHTML
 
@@ -201,7 +202,7 @@ function init() {
         }
         else if (i == 5) {
             creatureName = "The Harvester";
-            creatureImage = "/thecrawl.png";
+            creatureImage = "/harvester.png";
             //creatureDescription = "jlkakjladlk asdfasdf asdfadsf adsf asdfasdfafds";
         }
         else if (i == 6) {
@@ -221,47 +222,78 @@ function init() {
     }
 
     let bigLine = "";
-    let warningCard = `<div class="wrapper"><div id="warning"><h2>Warning: Once you proceed in this section, you cannot go back.</h2></div>`;
+    let warningCard = `<div class="wrapper"><div id="warning"><h2>Warning: Once you proceed in this section,<br> you cannot go back.</h2></div>`;
     bigLine += warningCard;
     cardList.push(bigLine);
+
+
+    let matchingSection =`<div class="card">`;
+
+    let crawl = new Card("images/thecrawl.png", "Crawl");
+    matchingSection += crawl.BuildCard();
+
+    let trimming = new Card("images/trimming.png", "Trimming");
+    matchingSection += trimming.BuildCard();
+
+    let dropplace ='<div id="dropZone"> <div id="dropBox1" ondrop="drop(event)" ondragover="allowDrop(event)"> <p>"It swallowed me whole."</p> </div> <div id="dropBox2" ondrop="drop(event)" ondragover="allowDrop(event)"> <p>Fish</p> </div> <div id="dropBox3" ondrop="drop(event)" ondragover="allowDrop(event)"> <p>Fish</p> </div></div>';
+ matchingSection += dropplace;
+    cardList.push(matchingSection);
 }
 
 let cardNumber = -1;
 let cardList = [];
 let newButton = document.createAttribute("button");
 
-class Card {
-    constructor(image, name, info1) {
-        this.image = image;
-        this.name = name;
-        this.info1 = info1;
+// JS
+function allowDrop(event) {
+    event.preventDefault();
+  }
+  function drag(event) {
+    event.dataTransfer.setData("text", event.target.id);
+  }
+  function drop(event) {
+    event.preventDefault();
+    let data = event.dataTransfer.getData("text");
+    let isCorrect = false;
+    //event.target.appendChild(document.getElementById(data));
+    if (id = data)
+    {
+        isCorrect = true;
+    }
+    
+    if (isCorrect == true)
+    {
+        console.log("yes");
     }
 
-    static BuildCard(image, name, info1) {
-        let bigLine = `<div class="card">`;
-        let imageLine = image;
-        let name1 = name;
-        let description = info1;
-        let endcap = `SASDF ${i} </div>`;
-        bigLine += imageLine;
-        bigLine += name1;
-        bigLine += description;
-        bigLine += endcap;
+  }
+  
+class Card 
+{
+    constructor(image, name) {
+        this.image = image;
+        this.name = name;
+    }
+
+    BuildCard() {
+        let imageLine = this.image;
+        let name1 = this.name;
+        let bigLine = `<img id=${name1} src=${imageLine} draggable="true" ondragstart="drag(event)" width="300">`;
         return bigLine;
     }
 }
 
-
-
 function myFunction() {
+
     cardNumber += 1;
 
     let x = document.getElementById("AdditionalButton");
-    if (cardNumber == 2 || cardNumber == 3 || cardNumber == 4 || cardNumber == 5 || cardNumber == 6 || cardNumber == 7) {
+    if (cardNumber < 8 && cardNumber > 1) {
         x.style.display = "block";
     } else {
         x.style.display = "none";
     }
+
     // if (document.querySelector("#content").innerHTML == cardList[7].innerHTML);
     // {
     //document.querySelector("#content").innerHTML = document.getElementById('name-box').value;
@@ -282,14 +314,15 @@ function myFunction() {
 
 function backFunction()
 {
-    cardNumber -= 1;
 
+    cardNumber -= 1;
     let x = document.getElementById("AdditionalButton");
-    if (cardNumber == 2 || cardNumber == 3) {
+    if (cardNumber < 8 && cardNumber > 1) {
         x.style.display = "block";
     } else {
         x.style.display = "none";
     }
+
     // if (document.querySelector("#content").innerHTML == cardList[7].innerHTML);
     // {
     //document.querySelector("#content").innerHTML = document.getElementById('name-box').value;
