@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 3 Proposal</title>
+    <title>Project 3 Proposal and Documentation</title>
     <style>
         body {
             font-family: monospace;
@@ -16,7 +16,7 @@
 
         }
 
-        #wrapper {
+        .wrapper {
             padding: 10px 3vw;
             background-color: white;
         }
@@ -36,11 +36,12 @@
 
         .trimhop {
             width: 100px;
+            padding: 0px;
         }
 
         img {
-            width: 60vw;
-            padding: 10px 20px;
+            width: 45vw;
+            padding: 50px;
         }
 
         header {
@@ -54,9 +55,20 @@
             line-height: 90px;
         }
 
-        #title {
+        .bigText {
+            display: flex;
+            background-color: white;
+            text-align: center;
+            width: 100%;
+            font-style: bold;
+            margin-bottom: 10px;
+            height: 90px;
+            line-height: 90px;
+        }
+
+        .titles {
             display: inline;
-            font-size: 5vw;
+            font-size: 2.5vw;
             font-style: bold;
             color: #e11608;
             text-align: center;
@@ -67,12 +79,13 @@
 
 <body>
 
-    <header>
+    <div class="bigText">
         <img src="images/trimming hop.gif" class="trimhop">
-        <div id="title"> PROJECT 3 PROPOSAL </div>
+        <div class="titles"> PROJECT 3 PROPOSAL & DOCUMENATION</div>
         <img src="images/trimming hop.gif" class="trimhop">
-    </header>
-    <div id="wrapper">
+    </div>
+    <div class="wrapper">
+        <h1>PROPOSAL</h1>
         <h1>I. High Concept</h1>
         <ul>
             <li>This is an educational interactive experience that focuses on acquainting the participant on the various
@@ -148,7 +161,7 @@
         </ul>
 
 
-        <h1>IX. About the developer</h1>
+        <h1>IX. About The Developer</h1>
         <ul>
             <li>My name's Jay Miller- I'm a second year Game Design and Development student at RIT, minoring in 2D
                 Studio Art and Psychology.</li>
@@ -158,6 +171,27 @@
                 onstage, and get too deeply invested in obscure media.
             </li>
         </ul>
+    </div>
+    <hr>
+    <div class="wrapper">
+        <h1>DOCUMENTATION</h1>
+        <h1>I. How It Works</h2>
+            <ul>
+                <li>First, I had to figure out how I wanted to set up the "changing screens" on the page. I realized
+                    that
+                    I could do this best within my skillset is by keeping each page as an object in an array, and
+                    iterating through that array to display the different "pages".</li>
+                <li>I decided to use a loop to create each page and then add them to the array, and access them when the
+                    player clicks the "next" button to load the next set of text and images.</li>
+            </ul>
+            <h1>II. How I Made It & Resources</h1>
+            <ul>
+                <li>I utilized <a href="https://www.piskelapp.com/" target="_blank">Piskel</a> to create my assets.</li>
+                <li>Background ambience was sourced from <a href="https://www.zapsplat.com/" target="_blank">ZapSplat</a>.</li>
+                <li>I used <a href="https://www.youtube.com/@darian_quilloy/videos" target="_blank">Darian Quilloy's Work</a>
+                    as reference for the creatures and logo for National Living Meat Research.</li>
+            </ul>
+
     </div>
 </body>
 
