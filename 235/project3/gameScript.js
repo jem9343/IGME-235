@@ -4,7 +4,6 @@ window.onload = init;
 //https://codepen.io/Coding_Journey/pen/LYPNmpe
 function init() {
     let contentSection = document.querySelector("#content").innerHTML
-
     let creatureName = "";
     let creatureImage = "";
     let creatureDescription = "";
@@ -161,7 +160,8 @@ function init() {
 		</div>
     
         </form></div></div>`
-        //<input type="submit" value="Submit Answer">
+    //<input type="submit" value="Submit Answer">
+
     cardList.push(bigLine1);
 
     for (let i = 0; i < 6; i++) {
@@ -227,7 +227,7 @@ function init() {
     cardList.push(bigLine);
 
 
-    let matchingSection =`<div class="card">`;
+    let matchingSection = `<div class="card">`;
 
     let crawl = new Card("images/thecrawl.png", "Crawl");
     matchingSection += crawl.BuildCard();
@@ -235,41 +235,40 @@ function init() {
     let trimming = new Card("images/trimming.png", "Trimming");
     matchingSection += trimming.BuildCard();
 
-    let dropplace ='<div id="dropZone"> <div id="dropBox1" ondrop="drop(event)" ondragover="allowDrop(event)"> <p>"It swallowed me whole."</p> </div> <div id="dropBox2" ondrop="drop(event)" ondragover="allowDrop(event)"> <p>Fish</p> </div> <div id="dropBox3" ondrop="drop(event)" ondragover="allowDrop(event)"> <p>Fish</p> </div></div>';
- matchingSection += dropplace;
+    let dropplace = '<div id="dropZone"> <div id="dropBox1" ondrop="drop(event)" ondragover="allowDrop(event)"> <p>"It swallowed me whole."</p> </div> <div id="dropBox2" ondrop="drop(event)" ondragover="allowDrop(event)"> <p>Fish</p> </div> <div id="dropBox3" ondrop="drop(event)" ondragover="allowDrop(event)"> <p>Fish</p> </div></div>';
+    matchingSection += dropplace;
     cardList.push(matchingSection);
 }
 
 let cardNumber = -1;
 let cardList = [];
 let newButton = document.createAttribute("button");
+// print(thisPage);
+let userName = "You";
 
 // JS
 function allowDrop(event) {
     event.preventDefault();
-  }
-  function drag(event) {
+}
+function drag(event) {
     event.dataTransfer.setData("text", event.target.id);
-  }
-  function drop(event) {
+}
+function drop(event) {
     event.preventDefault();
     let data = event.dataTransfer.getData("text");
     let isCorrect = false;
     //event.target.appendChild(document.getElementById(data));
-    if (id = data)
-    {
+    if (id = data) {
         isCorrect = true;
     }
-    
-    if (isCorrect == true)
-    {
+
+    if (isCorrect == true) {
         console.log("yes");
     }
 
-  }
-  
-class Card 
-{
+}
+
+class Card {
     constructor(image, name) {
         this.image = image;
         this.name = name;
@@ -288,11 +287,52 @@ function myFunction() {
     cardNumber += 1;
 
     let x = document.getElementById("AdditionalButton");
+
+    if (cardNumber == 1) {
+        userName = document.querySelector("#name-box").value;
+        console.log(userName);
+    }
     if (cardNumber < 8 && cardNumber > 1) {
         x.style.display = "block";
     } else {
         x.style.display = "none";
     }
+
+    if (cardNumber == 9) {
+        document.querySelector("#MainWindow").style.width = "fit-content"
+        console.log(userName);
+        if (userName.length == 0) {
+            userName = "You";
+        }
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let yyyy = today.getFullYear();
+
+        today = mm + '/' + dd + '/' + yyyy;
+
+        let todayTime = new Date();
+        let time = todayTime.getHours() + ":" + todayTime.getMinutes();
+        //document.write(today);
+        let finalPage = `<div id="certificate">
+        <div id="innerCertificate">
+            <span style="font-size:50px; font-weight:bold">Certificate of Completion</span>
+            <br><br>
+            <span style="font-size:25px"><i>This is to certify that</i></span>
+            <br><br>
+            <span style="font-size:30px"><b>${userName}</b></span><br /><br />
+            <span style="font-size:25px"><i>has completed the course</i></span> <br /><br />
+            <span style="font-size:30px"> Vita Carnis Interactive Certification</span> <br /><br />
+            <span style="font-size:25px"><i>dated</i></span><br>
+            <span style="font-size:30px">${today} ${time}</span>
+        </div>
+    </div>`
+        let printButton = `<button onclick="window.print()" id="printButton">PRINT CERTIFICATE</button>`
+        finalPage += printButton;
+        cardList.push(finalPage);
+     //   typeWriter(finalPage, document.querySelector("#content"));
+    }
+    //<span style="font-size:20px">with score of <b>$grade.getPoints()%</b></span> <br /><br /><br /><br />
 
     // if (document.querySelector("#content").innerHTML == cardList[7].innerHTML);
     // {
@@ -312,8 +352,7 @@ function myFunction() {
     //console.log(infoCard);
 }
 
-function backFunction()
-{
+function backFunction() {
 
     cardNumber -= 1;
     let x = document.getElementById("AdditionalButton");
@@ -334,24 +373,32 @@ function backFunction()
 
 }
 
-
 // have a loop that iterates through the cards
 // update the display when user clicks button
 
 //function CheckAnswer()
 //{
- //   let d = document.forms["Form"]["label-name"].value;
-  //  if (d == null || d == "") {
- //     alert("Please Fill In All Required Fields");
- //     return false;
- //   }
- //   else
- //   {
- //       return true;
- //   }
+//   let d = document.forms["Form"]["label-name"].value;
+//  if (d == null || d == "") {
+//     alert("Please Fill In All Required Fields");
+//     return false;
+//   }
+//   else
+//   {
+//       return true;
+//   }
 //}
 
-function CheckAnswer()
-{
+function CheckAnswer() {
     console.log("Yippee");
 }
+
+//
+//let i = 0;
+//function typeWriter(txt, elementiD) {
+//    if (i < txt.length) {
+//        document.getElementById(elementiD).innerHTML += txt.charAt(i);
+//        i++;
+//        setTimeout(typeWriter, speed);
+//    }
+//}
