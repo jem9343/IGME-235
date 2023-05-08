@@ -5,7 +5,7 @@ body {
 
 /*#2e2e3a; #6d4c67;  #e11608;*/
 h1 {
-    color: gainsboro;
+    color: white;
     font-family: sans-serif;
     border-bottom: 3px solid rgb(60, 17, 17);
     display: block;
@@ -96,35 +96,39 @@ button {
     align-self: center;
 }
 
+#instructions
+{
+    font-size: 20pt;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
 #dropZone {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  min-height: 200px;
+  min-height: 250px;
   margin-bottom: 20px;
   background-color: whitesmoke;
   border: solid 3px rgb(60, 17, 17);
 }
 
-#dropBox1,
-#dropBox2,
-#dropBox3,
-#dropBox4 {
+.dropBox{
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  height: 250px;
-  width: 250px;
+  width: 200px;
   border: 1px solid #aaaaaa;
   padding: 1rem;
   color: black;
-  font-size: 22pt;
+  font-size: 12pt;
 }
 
 #warning {
     grid-row: 1;
-    grid-column: 1/ span 4;
+    grid-column: 1/5;
     margin: 10px;
     text-align: center;
 }
@@ -143,6 +147,10 @@ button {
     display: block;
     margin: 10px 25px 10px 25px;
     font-size: 16pt;
+}
+#alert
+{
+    width: 200px;
 }
 
 #name,
@@ -192,6 +200,7 @@ h2 {
 li {
     font-size: 14pt;
     font-style: italic;
+    line-height: 28px;
 }
 
 #stagger {
@@ -238,7 +247,7 @@ footer {
     font-weight: bold;
     font-family: sans-serif;
 }
-#AdditionalButton
+#backButton
 {
     display:none;
     margin-left: 10px;
@@ -248,22 +257,43 @@ footer {
 #certificate
 {
     width:800px;
-    height:600px;
+    height:450px;
     padding:20px;
     text-align:center;
     border: 10px solid #787878;
+    background-color: white;
+    color: black;
+    font-weight: 600;
 }
 
 #innerCertificate{
     width:750px;
-    height:550px;
+    height:400px;
     padding:20px;
     text-align:center;
     border: 5px solid #787878;
+    color: black;
 }
 #printButton
 {
     font-size: 12pt;
-    margin: 10px 0px 0px 50px;
+    margin: 20px 0px 0px 710px;
+}
+
+#present
+{
+    margin: 25px 50px
+}
+
+.dragCard
+{
+    width: 100px;
+    margin: 0px 20px;
+}
+
+#certificationMeat
+{
     float:left;
+    margin-top: -350px;
+    width: 200px;
 }
